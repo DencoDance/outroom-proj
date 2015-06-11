@@ -23,11 +23,13 @@
 
 function overlaySlider(target,overlay,time){
     $(overlay).css('margin-top',$(target).height()).addClass('hidden');
+    var m_top = $(overlay).next().css('margin-top');
     var flag = true;
 
     $(target).mouseenter(function(){
-        $(this).mouseleave(function(){
+        $(this).mouseleave(function(){ //fake -> out
              if (flag){
+                 $(overlay).next().stop().animate({'opacity':'1','margin-top':m_top},200);
                  $(overlay)
                      .stop()
                      .animate({'height':'0px','margin-top':$(target).height()},time)
@@ -37,7 +39,8 @@ function overlaySlider(target,overlay,time){
              }
         });
 
-        $(overlay)
+        $(overlay).next().stop().animate({'opacity':'0','margin-top':'-10px'},200);
+        $(overlay) // action
             .removeClass('hidden')
             .stop()
             .animate({'height':$(target).height(),'margin-top':'0'},time)
@@ -45,7 +48,8 @@ function overlaySlider(target,overlay,time){
                flag = false;
         });
 
-        $(overlay).mouseleave(function(){
+        $(overlay).mouseleave(function(){ //out
+           $(this).next().stop().animate({'opacity':'1','margin-top':m_top},200);
            $(this)
                .stop()
                .animate({'height':'0px','margin-top':$(target).height()},time)
@@ -65,12 +69,12 @@ $(function(){
 //TODO include header,footer...
 
     $('.overlay,.overlayLeft,.overlayRight').mouseenter(function(){
-        $(this).css({'transition':'0.7s','opacity':'1'}).mouseleave(function(){
-            $(this).css('opacity','0.6');
+        $(this).css({'transition':'0.5s','opacity':'0.7'}).mouseleave(function(){
+            $(this).css('opacity','0.4');
         });
     });
 
-    overlaySlider('.servicePhoto.first','.darkOverlay.first',200);
-    overlaySlider('.servicePhoto.sec','.darkOverlay.sec',200);
-    overlaySlider('.servicePhoto.third','.darkOverlay.third',200);
+    overlaySlider('.servicePhoto.first','.darkOverlay.first',250);
+    overlaySlider('.servicePhoto.sec','.darkOverlay.sec',250);
+    overlaySlider('.servicePhoto.third','.darkOverlay.third',250);
 });

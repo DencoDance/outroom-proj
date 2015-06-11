@@ -138,7 +138,7 @@ body{
     height: 100px;
     background: #fafafa;
     box-shadow: 1px 1px 1px #ccc;
-    z-index: 1;
+    z-index: 2;
 }
 
 .headerContent{
@@ -149,6 +149,7 @@ body{
 
 .headerLinks.dark a{
     color : rgb(21,21,21);
+    font-size: 14px;
 }
 
 .headerLinks.dark a:visited{
@@ -401,7 +402,7 @@ body{
 
 .overlay{
     background-color: black;
-    opacity: 0.6;
+    opacity: 0.4;
     position: absolute;
     height: 397px;
     width: 1170px;
@@ -415,7 +416,7 @@ body{
 }
 
 .overlayLeft{
-    opacity: 0.6;
+    opacity: 0.4;
     background-color: black;
     position: absolute;
     height: 300px;
@@ -429,7 +430,7 @@ body{
 }
 
 .overlayRight{
-    opacity: 0.6;
+    opacity: 0.4;
     background-color: black;
     position: absolute;
     float: right;
@@ -471,7 +472,7 @@ body{
     width: 100%;
     max-width: 1920px;
     background: #e53935;
-    height: 100px;
+    height: 126px;
     transition: 0.6s;
     cursor: pointer;
 }
@@ -501,7 +502,7 @@ body{
 }
 
 .longBtnText{
-    padding-top: 40px;
+    padding-top: 53px;
     text-align: center;
 }
 
@@ -591,6 +592,7 @@ footer .logo{
     /* height: 495px;*/
     height: 0px;
     width: 381px;
+    z-index: 1;
 }
 
 .servicePhoto.first{
