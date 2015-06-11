@@ -69,8 +69,9 @@ $(function(){
 //TODO include header,footer...
 
     $('.overlay,.overlayLeft,.overlayRight').mouseenter(function(){
-        $(this).css({'transition':'0.5s','opacity':'0.7'}).mouseleave(function(){
-            $(this).css('opacity','0.4');
+       $(this).next().addClass('darkFilter');
+          $(this).mouseleave(function(){
+             $(this).next().removeClass('darkFilter');
         });
     });
 

@@ -398,26 +398,37 @@ body{
 .bigPhoto{
     width: 1170px;
     height: 397px;
+    -webkit-filter: brightness(0.6);
+    -moz-filter: brightness(0.6);
+    filter: brightness(0.6);
+    transition: 0.5s;
+}
+
+.darkFilter{
+    -webkit-filter: brightness(0.2) !important;
+    -moz-filter: brightness(0.2) !important;
+    filter: brightness(0.2) !important;
 }
 
 .overlay{
-    background-color: black;
-    opacity: 0.4;
     position: absolute;
     height: 397px;
     width: 1170px;
-    bottom: auto;
+    z-index: 1;
 }
 
 .smallImgLeft{
     float: left;
     height: 300px;
     width: 570px;
+    -webkit-filter: brightness(0.6);
+    -moz-filter: brightness(0.6);
+    filter: brightness(0.6);
+    transition: 0.5s;
 }
 
 .overlayLeft{
-    opacity: 0.4;
-    background-color: black;
+    z-index: 1;
     position: absolute;
     height: 300px;
     width: 570px;
@@ -427,11 +438,14 @@ body{
     float: right;
     height: 300px;
     width: 570px;
+    -webkit-filter: brightness(0.6);
+    -moz-filter: brightness(0.6);
+    filter: brightness(0.6);
+    transition: 0.5s;
 }
 
 .overlayRight{
-    opacity: 0.4;
-    background-color: black;
+    z-index: 1;
     position: absolute;
     float: right;
     height: 300px;
