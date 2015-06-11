@@ -138,6 +138,7 @@ body{
     height: 100px;
     background: #fafafa;
     box-shadow: 1px 1px 1px #ccc;
+    z-index: 1;
 }
 
 .headerContent{
@@ -171,7 +172,7 @@ body{
 
 .block1_Content hr{
     width : 85px;
-    border-color : #e74c49;
+    border : 1px solid #e74c49;
 }
 
 .block1_Text{
@@ -216,7 +217,7 @@ body{
 
 .ourWorks hr{
     width : 85px;
-    border-color : #e74c49;
+    border : 1px solid #e74c49;
 }
 
 .centered._works{
@@ -300,7 +301,7 @@ body{
 
 .centered.key hr{
     width : 85px;
-    border-color : #e74c49;
+    border : 1px solid #e74c49;
 }
 
 .centered.key{
@@ -358,7 +359,7 @@ body{
 
 .servisesBlock hr{
     width: 150px !important;
-    border-color: #e0e0e0 !important;
+    border: 1px solid #e0e0e0 !important;
 }
 
 .servises:hover{
@@ -381,7 +382,7 @@ body{
 
 .centered.last hr{
     width: 85px;
-    border-color : #e74c49;
+    border : 1px solid #e74c49;
 }
 
 .smallImgBlock{
@@ -399,11 +400,12 @@ body{
 }
 
 .overlay{
-    opacity: .7;
     background-color: black;
+    opacity: 0.6;
     position: absolute;
     height: 397px;
     width: 1170px;
+    bottom: auto;
 }
 
 .smallImgLeft{
@@ -413,7 +415,7 @@ body{
 }
 
 .overlayLeft{
-    opacity: .7;
+    opacity: 0.6;
     background-color: black;
     position: absolute;
     height: 300px;
@@ -427,7 +429,7 @@ body{
 }
 
 .overlayRight{
-    opacity: .7;
+    opacity: 0.6;
     background-color: black;
     position: absolute;
     float: right;
@@ -548,3 +550,88 @@ footer .logo{
 .smallIcon{
     margin-left: -20px;
 }
+
+
+/* S E R V I C E*/
+.blockService{
+    width: 100%;
+    max-width: 1920px;
+    height: 1000px;
+    background: #fefefe;
+}
+
+.serviceContent{
+    padding-top: 225px;
+}
+
+.centered.serviceContent{
+    text-align: center;
+}
+
+.centered.serviceContent hr{
+    width : 85px;
+    border : 1px solid #e74c49;
+}
+
+.servicePhotoBlock{
+    padding-top: 100px;
+}
+
+.servicePhoto{
+    text-align: center;
+    width: 380px;
+    height: 495px;
+    display: inline-block;
+    border: 1px solid #e0e0e0;
+}
+
+.darkOverlay{
+    background-color: black;
+    position: absolute;
+    /* height: 495px;*/
+    height: 0px;
+    width: 381px;
+}
+
+.servicePhoto.first{
+    float: left;
+}
+
+.servicePhoto:last-child{
+    float: right;
+}
+
+.underImgService{
+    padding-top: 60px;
+}
+
+.underTitleTextService{
+    padding-top: 25px;
+    max-height: 80px;
+    overflow-y: auto;
+}
+
+.underTitleService{
+    font-family: robotoBlack;
+    font-size: 24px;
+    line-height: 24px;
+    color: rgb(21,21,21);
+}
+
+.descriptionService{
+    font-family: robotoLight;
+    font-size: 14px;
+    line-height: 18px;
+    color: rgb(21,21,21);
+}
+
+.serviceImg {
+    margin-top: 40px;
+}
+
+.eye{
+    margin-top: 65px;
+}
+
+
+
