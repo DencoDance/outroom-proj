@@ -1,5 +1,5 @@
 .hidden{
-    display: none;
+    display: none !important;
 }
 
 .right{
@@ -56,6 +56,26 @@ body{
 .header{
     height: 43px;
     padding-top: 55px;
+    text-align: right;
+}
+
+.language{
+    font-family: robotoMedium;
+    font-size: 10px;
+    line-height: 41px;
+    color: #bdbdbd;
+    text-decoration: underline;
+    padding-right: 21.5%;
+    cursor: pointer;
+}
+
+.language.main{
+    padding-right: 14.1%;
+    line-height: 45px;
+}
+
+.logoHref{
+    float: left;
 }
 
 .logo{
@@ -145,6 +165,7 @@ body{
     margin: 0 auto;
     width: 1170px;
     padding-top: 30px;
+    text-align: right;
 }
 
 .headerLinks.dark a{
@@ -171,6 +192,31 @@ body{
     font-family: robotoBlack;
 }
 
+.headText.light{
+    font-size: 24px;
+    line-height: 24px;
+    color: #fefefe;
+}
+
+.overlayContainer{
+    padding-top: 35px;
+}
+
+.overlayContainer hr{
+    width: 55px !important;
+}
+
+.underOverlayText{
+    padding-top: 20px;
+}
+
+.underOverlay{
+    font-family: robotoLight;
+    font-size: 14px;
+    color: #fefefe;
+    line-height: 36px;
+}
+
 .block1_Content hr{
     width : 85px;
     border : 1px solid #e74c49;
@@ -185,6 +231,10 @@ body{
     font-family: robotoRegular;
     font-size: 14px;
     line-height: 24px;
+}
+
+.text.light{
+    color: #9e9e9e;
 }
 
 .leftBlock{
@@ -310,19 +360,28 @@ body{
     padding-top: 120px;
 }
 
-.block3_Img{
+.allPhoto{
     padding-top: 105px;
+    text-align: center;
+}
+
+.block3_Img{
     display: inline-block;
-    max-width: 270px;
-    margin-left: 190px;
+    max-height: 210px;
 }
 
 .block3_Img:first-of-type{
     margin-left: 0;
+    float: left;
+}
+
+.block3_Img:last-child{
+    float: right;
 }
 
 .block3_Img img{
     height: 220px;
+    width: 270px;
 }
 
 .underImg{
@@ -453,12 +512,12 @@ body{
 }
 
 .bigOverlayContent{
-    padding-top:120px ;
+    padding-top:100px ;
     text-align: left;
 }
 
 .smallOverlayContent{
-    padding-top:75px ;
+    padding-top:55px ;
     text-align: left;
 }
 
@@ -499,8 +558,16 @@ body{
     padding-bottom: 10px;
 }
 
-.smallItalic:last-child{
-    margin-top: 2px;
+.smallItalic.more{
+    font-size: 10px;
+    color: #e74c49;
+    cursor : pointer;
+    transition: 0.5s;
+    padding-bottom: 0px;
+}
+
+.smallItalic.more:hover{
+    color: #fafafa;
 }
 
 .longBtn:hover{
@@ -598,6 +665,7 @@ footer .logo{
     height: 495px;
     display: inline-block;
     border: 1px solid #e0e0e0;
+    position: relative;
 }
 
 .darkOverlay{
@@ -623,8 +691,6 @@ footer .logo{
 
 .underTitleTextService{
     padding-top: 25px;
-    max-height: 80px;
-    overflow-y: auto;
 }
 
 .underTitleService{
@@ -643,10 +709,13 @@ footer .logo{
 
 .serviceImg {
     margin-top: 40px;
+    width: 210px;
 }
 
 .eye{
-    margin-top: 65px;
+   bottom: 15px;
+   margin-left: -20px;
+   position: absolute;
 }
 
 
