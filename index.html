@@ -218,3 +218,33 @@
 
    </body>
 </html>
+
+<script>
+    var scrollPosition = 0;
+    var headerTopPosition = $('.mainHeader').offset().top;
+
+    function headerAction(){
+        if ( $(window).scrollTop() >= headerTopPosition ){
+            $('.mainHeader').css({'position':'fixed','top':'0'});
+
+            if( $(window).scrollTop() >= scrollPosition &&
+                $(window).scrollTop() >= headerTopPosition + 5*$('.mainHeader').height()
+            ){
+                $('.mainHeader').stop().slideUp(150);
+            }else{
+                $('.mainHeader').stop().slideDown(150);
+            }
+            scrollPosition = $(window).scrollTop();
+        }else{
+            $('.mainHeader').css({'position':'initial'});
+        }
+    }
+
+    $(function(){
+       headerAction();
+
+       $(window).scroll(function(){
+           headerAction();
+       });
+    });
+</script>

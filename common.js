@@ -29,14 +29,14 @@ function overlaySlider(target,overlay,time){
     $(target).mouseenter(function(){
         $(this).mouseleave(function(){ //fake -> out
              if (flag){
+                 $(overlay).children(':first').addClass('hidden');
                  $(overlay).next().stop().animate({'opacity':'1','margin-top':m_top},200);
                  $(overlay)
                      .stop()
                      .animate({'height':'0px','margin-top':$(target).height()},time)
                      .finish(function(){
                        $(overlay).addClass('hidden');
-                 });
-                 $(overlay).children(':first').addClass('hidden');
+                     });
              }
         });
 
@@ -78,7 +78,7 @@ $(function(){
         });
     });
 
-   // overlaySlider('.servicePhoto.first','.darkOverlay.first',250);
+    overlaySlider('.servicePhoto.first','.darkOverlay.first',250);
     overlaySlider('.servicePhoto.sec','.darkOverlay.sec',250);
     overlaySlider('.servicePhoto.third','.darkOverlay.third',250);
 });

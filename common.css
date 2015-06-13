@@ -200,6 +200,7 @@ body{
 
 .overlayContainer{
     padding-top: 35px;
+    cursor : pointer;
 }
 
 .overlayContainer hr{
