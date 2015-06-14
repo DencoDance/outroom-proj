@@ -232,33 +232,34 @@
       var scrollPosition = 0;
         $(window).scrollTop(0);
 
-       $(window).on('scroll mousewheel',function(event){
-        if ($('.intro').height()){
+        if(!$(window).scrollTop()){
+          $(window).on('scroll mousewheel',function(event){
+            if ($('.intro').height()){
+              $(window).scrollTop(0);
 
-            $(window).scrollTop(0);
+              $('.intro').height($('.intro').height() - 40);
+              $('.intro.black').css('opacity',Math.round($('.intro.black').css('opacity')*100)/100 + 0.03);
 
-            $('.intro').height($('.intro').height() - 40);
-            $('.intro.black').css('opacity',Math.round($('.intro.black').css('opacity')*100)/100 + 0.03);
-
-            $('.intro .centered').children().each(function(){
-                if ( Math.abs(( $('.mainHeader').offset().top + $('.mainHeader').height()) -
-                               ($(this).offset().top + $(this).height()) ) < 380
-                ){
-                    $(this).fadeOut(150);
-                }
-            });
-        }else{
-            $('.mainHeader').css({'position':'fixed','top':'0'});
-
-            if( $(window).scrollTop() >= scrollPosition &&
-                $(window).scrollTop() >= 5*$('.mainHeader').height()
-            ){
-                $('.mainHeader').stop().slideUp(150);
+              $('.intro .centered').children().each(function(){
+                   if ( Math.abs(( $('.mainHeader').offset().top + $('.mainHeader').height()) -
+                      ($(this).offset().top + $(this).height()) ) < 380
+                   ){
+                       $(this).fadeOut(150);
+                    }
+              });
             }else{
-                $('.mainHeader').stop().slideDown(150);
-            }
+                $('.mainHeader').css({'position':'fixed','top':'0'});
+
+                if( $(window).scrollTop() >= scrollPosition &&
+                    $(window).scrollTop() >= 5*$('.mainHeader').height()
+                  ){
+                     $('.mainHeader').stop().slideUp(150);
+                  }else{
+                     $('.mainHeader').stop().slideDown(150);
+                  }
+                }
+                scrollPosition = $(window).scrollTop();
+            });
         }
-           scrollPosition = $(window).scrollTop();
-       });
     });
 </script>
