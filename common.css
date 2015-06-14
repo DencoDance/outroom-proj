@@ -261,6 +261,11 @@ body{
     background: #fafafa;
 }
 
+.ourWorks.light{
+    height: 387px;
+    background: white;
+}
+
 .headText{
     color : rgb(21,21,21);
     font-size: 45px;
@@ -275,6 +280,11 @@ body{
 .centered._works{
     text-align: center;
     padding-top: 115px;
+}
+
+.centered._works.light{
+    text-align: center;
+    padding-top: 215px;
 }
 
 .worksImg{

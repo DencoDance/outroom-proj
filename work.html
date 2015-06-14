@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="UTF-8">
+    <title>Портфолио</title>
+    <link rel="stylesheet" type="text/css" href="common.css">
+    <script src="jquery-1.11.3.min.js"></script>
+    <script src="common.js"></script>
+  </head>
+
+<body>
+  <div class="block2">
+      <header class="mainHeader"></header>
+      <div class="ourWorks light">
+          <div class="centered _works light">
+              <span class="headText">НАШИ РАБОТЫ</span>
+              <hr />
+          </div>
+      </div>
+
+      <div class="worksImg">
+          <div class="centered">
+              <img class="workExample" src="img/ipad.png" alt="Our work" />
+              <div class="workInfo">
+                  <img class="logoImg" src="img/tutu.png" alt="work logo" />
+                  <div class="workBlock">
+                      <span class="workTextTitle">OMEGA FRANCE TOURS</span>
+                      <span class="workTextCaps">ОРГАНИЗАЦИИ ИНДИВИДУАЛЬНЫХ ТРАНСФЕРОВ И ЭКСКУРСИЙ ВО ФРАНЦИИ</span><br/><br/>
+
+                      <div class="smallText">
+                          <span class="workText title">Ключевая задача:</span><br/>
+                          <span class="workText">Создать инструмент по привлечению клиентов из интернета на услуги</span><br/>
+                          <span class="workText">компании</span><br/>
+
+                          <div class="done">
+                              <span class="workText title">Что было сделано:</span><br/>
+                              <span class="workText">Сайт, фирменный стиль</span>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="longBtn"></div>
+
+  <footer></footer>
+
+</body>
+</html>
+
+<style>
+    header{
+        position: fixed;
+        top: 0;
+    }
+</style>
+
+<script>
+    mainHeader();
+
+    $(window).scroll(function () {
+        mainHeader();
+    });
+</script>

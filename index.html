@@ -18,7 +18,7 @@
              <nav class="headerLinks">
                  <a href="index.html">ГЛАВНАЯ</a>
                  <a href="servises.html">УСЛУГИ</a>
-                 <a>ПОРТФОЛИО</a>
+                 <a href="work.html">ПОРТФОЛИО</a>
                  <a>БЛОГ</a>
                  <a>КОНТАКТЫ</a>
              </nav>
@@ -245,6 +245,19 @@
 
        $(window).scroll(function(){
            headerAction();
+       });
+
+       $('.overlay,.overlayLeft,.overlayRight').mouseenter(function(){
+           $(this).next().addClass('darkFilter');
+           $(this).mouseleave(function(){
+               $(this).next().removeClass('darkFilter');
+           });
+       });
+
+       $(window).on('scroll mousewheel',function(event){
+          // if ( $(window).scrollTop() < $('.block1').offset().top){
+
+         //  }
        });
     });
 </script>
