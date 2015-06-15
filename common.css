@@ -535,13 +535,17 @@ body{
 }
 
 .bigOverlayContent{
-    padding-top:100px ;
+    padding-top:120px ;
     text-align: left;
+    transition: 0.5s;
+    cursor: pointer;
 }
 
 .smallOverlayContent{
-    padding-top:55px ;
+    padding-top:75px ;
     text-align: left;
+    transition: 0.5s;
+    cursor: pointer;
 }
 
 .bigCont{
@@ -587,10 +591,9 @@ body{
     cursor : pointer;
     transition: 0.5s;
     padding-bottom: 0px;
-}
-
-.smallItalic.more:hover{
-    color: #fafafa;
+    opacity: 0;
+    line-height: 80px;
+    transition: 0.7s;
 }
 
 .longBtn:hover{
