@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Контакты</title>
+    <link rel="stylesheet" type="text/css" href="common.css">
+    <script src="jquery-1.11.3.min.js"></script>
+    <script src="common.js"></script>
+</head>
+  <body>
+   <div class="blockContacts">
+     <header class="mainHeader"></header>
+     <div class="ourWorks light">
+        <div class="centered _works light">
+            <span class="headText">ОБРАТНАЯ СВЯЗЬ</span>
+            <hr />
+        </div>
+     </div>
+
+     <div class="redBlock">
+        <div class="centered contacts"></div>
+     </div>
+
+     <div class="publicLinks">
+        <div  class="links centered">
+           <a class="publicLinkImg"><img src="img/public1.png"  alt="public link" /></a>
+           <a class="publicLinkImg"><img src="img/public2.png"  alt="public link" /></a>
+           <a class="publicLinkImg"><img src="img/public3.png"  alt="public link" /></a>
+           <a class="publicLinkImg"><img src="img/public4.png"  alt="public link" /></a>
+        </div>
+     </div>
+
+     <footer></footer>
+
+   </div>
+  </body>
+</html>
+
+<style>
+    header{
+        position: fixed;
+        top: 0;
+    }
+</style>
+
+<script>
+    mainHeader();
+
+    $(window).scroll(function () {
+        mainHeader();
+    });
+</script>

@@ -698,7 +698,6 @@ footer .logo{
 .darkOverlay{
     background-color: black;
     position: absolute;
-    /* height: 495px;*/
     height: 0px;
     width: 381px;
     z-index: 1;
@@ -745,5 +744,44 @@ footer .logo{
    position: absolute;
 }
 
+/* C O N T A C T S*/
+.blockContacts{
+    width: 100%;
+    max-width: 1920px;
+    height: 935px;
+    background: #fefefe;
+}
 
+.redBlock{
+    height: 545px;
+    background: #e53935;
+}
+
+.publicLinks{
+    background: #fefefe;
+    height: 250px;
+}
+
+.links{
+    width: 355px;
+}
+
+.links.centered{
+    padding-top: 101px;
+}
+
+.publicLinkImg{
+    padding-left: 50px;
+    cursor: pointer;
+}
+
+.publicLinkImg:first-child{
+    float: left;
+    padding-left: 0px;
+}
+
+.publicLinkImg:last-child{
+    float: right;
+    padding-left: 0px;
+}
 
