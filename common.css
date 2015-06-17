@@ -498,6 +498,7 @@ body{
     height: 397px;
     width: 1170px;
     z-index: 1;
+    cursor: pointer;
 }
 
 .smallImgLeft{
@@ -515,6 +516,7 @@ body{
     position: absolute;
     height: 300px;
     width: 570px;
+    cursor: pointer;
 }
 
 .smallImgRight{
@@ -533,6 +535,7 @@ body{
     float: right;
     height: 300px;
     width: 570px;
+    cursor: pointer;
 }
 
 .bigOverlayContent{
