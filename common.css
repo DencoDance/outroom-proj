@@ -370,7 +370,7 @@ body{
 .block3{
     width: 100%;
     max-width: 1920px;
-    height: 950px;
+    height: 979px;
     background: #fefefe;
 }
 
@@ -385,8 +385,9 @@ body{
 }
 
 .allPhoto{
-    padding-top: 105px;
+    padding-top: 100px;
     text-align: center;
+    height : 472px
 }
 
 .block3_Img{
@@ -410,11 +411,11 @@ body{
 }
 
 .underImg.middle{
-    padding-top: 35px;
+    padding-top: 30px;
 }
 
 .underImg{
-  padding-top: 39px;
+  padding-top: 34px;
 }
 
 .underTitle{
@@ -423,7 +424,7 @@ body{
 }
 
 .underTitleText{
-    padding-top: 35px;
+    padding-top: 28px;
     text-align: center;
 }
 
@@ -444,7 +445,7 @@ body{
 }
 
 .servisesBlock{
-  padding-top: 130px;
+  padding-top: 85px;
 }
 
 .servisesBlock hr{
@@ -585,6 +586,7 @@ body{
     height: 126px;
     transition: 0.6s;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .smallItalic{
