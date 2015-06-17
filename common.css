@@ -396,15 +396,16 @@ body{
 
 .block3_Img:first-of-type{
     margin-left: 0;
+    margin-top : 49px;
     float: left;
 }
 
 .block3_Img:last-child{
+    margin-top : 33px;
     float: right;
 }
 
 .block3_Img img{
-    height: 220px;
     width: 270px;
 }
 
