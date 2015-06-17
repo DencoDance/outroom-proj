@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <title>Услуги</title>
     <link rel="stylesheet" type="text/css" href="common.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <script src="jquery-1.11.3.min.js"></script>
     <script src="common.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
   </head>
 
   <body>
@@ -126,6 +128,7 @@
                 </div>
             </div>
     </div>
+    <div id="dialog"></div>
 
     <a href="contacts.html" class="longBtn"></a>
 
@@ -139,6 +142,146 @@
         position: fixed;
         top: 0;
     }
+
+    .ui-dialog.ui-widget.ui-widget-content{
+        width: 590px !important;
+        height: 550px !important;
+        padding: 0 !important;
+        position: fixed;
+    }
+
+    .ui-dialog-content.ui-widget-content{
+        height: 425px !important;
+    }
+
+    .ui-widget-header{
+        background: #e53935 !important;
+        border: none !important;
+        height: 80px !important;
+    }
+
+    .ui-dialog-title{
+        font-family: robotoBlack;
+        font-size: 24px;
+        line-height: 24px;
+        color : #fefefe;
+        padding-top: 28px;
+        padding-left: 12px;
+    }
+
+    .ui-dialog .ui-dialog-content{
+        padding: 15px;
+    }
+
+    .ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br{
+        border-bottom-right-radius: 0px !important;
+    }
+
+    .ui-corner-all, .ui-corner-bottom, .ui-corner-left, .ui-corner-bl{
+        border-bottom-left-radius: 0px !important;
+    }
+
+    .ui-corner-all, .ui-corner-top, .ui-corner-right, .ui-corner-tr{
+        border-top-right-radius : 0px!important;
+     }
+
+    .ui-corner-all, .ui-corner-top, .ui-corner-left, .ui-corner-tl{
+        border-top-left-radius : 0px !important;
+    }
+
+    .ui-widget-content{
+        background: #fefefe !important;
+        border: none !important;
+    }
+
+    .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default{
+        border: none !important;
+        background: #e53935 !important;
+        outline: none;
+        padding-right: 30px;
+        padding-top: 27px;
+    }
+
+    .ui-icon, .ui-widget-content .ui-icon{
+        background: url('img/close.png') no-repeat !important;
+    }
+
+    #dialog .underOverlay{
+        background: #fefefe;
+        width: 97.5%;
+        height: 35px;
+        font-family: robotoMedium;
+        font-size: 14px;
+        line-height: 35px;
+        padding-left: 15px;
+        cursor: pointer;
+        color: #212121;
+        transition: 0.5s;
+    }
+
+    #dialog .underOverlay:hover{
+        background: #eeeeee;
+    }
+
+    .activeGreen{
+        background: #00e676 !important;
+        color: #fefefe !important;
+        transition: 0.5s;
+    }
+
+    .activeHover{
+        background: #bdbdbd !important;
+        transition: 0.5s;
+    }
+
+    .dialogItem{
+        float: right;
+        opacity: 0;
+        font-family: robotoRegular;
+        font-size: 14px;
+        color: #bdbdbd;
+        padding-right: 15px;
+        transition: 0.5s;
+    }
+
+    .underOverlay img{
+        transition : 0.2s;
+        float:right;
+        padding-top: 10px;
+        position: absolute;
+        right: 30px;
+    }
+
+    .hideArrow{
+        opacity: 0;
+    }
+
+    .showArrow{
+        opacity: 1;
+    }
+
+    .blackContainer{
+        width: 94%;
+        text-align: center;
+        position: absolute;
+        bottom: 0px;
+        padding-bottom: 20px;
+    }
+
+    .blackBtn{
+        width: 190px;
+        cursor: pointer;
+        height: 70px;
+        background: #212121;
+        box-shadow: 1px 1px 1px #ccc;
+        font-family: robotoMedium !important;
+        font-size: 14px !important;
+        color: #fefefe;
+        line-height: 24px;
+        border: none;
+        outline: none;
+    }
+
 </style>
 
 <script>
@@ -195,4 +338,60 @@
          mainHeader();
      });
 
+</script>
+
+<script>
+  $(function(){
+     $('.overlayContainer').click(function(){
+
+         $('#dialog').html($(this).find('.underOverlayText').clone());
+         $('#dialog .underOverlayText br').remove();
+
+         $('#dialog .underOverlay').each(function(){
+            $(this).replaceWith("<div class='underOverlay'>" + $(this).text() + "</div>");
+         });
+
+         $('div.underOverlay').each(function(){
+            $(this).append('<span class="dialogItem">Добавить</span><img src="img/ok.png" class="hideArrow" alt="arrow" />');
+         });
+
+         $('#dialog').html($('#dialog').html() + '<div class="blackContainer"><input type="button" value="ДАЛЕЕ" class="blackBtn" /></div>')
+
+         $('#dialog').dialog({
+           'modal':true,
+           'title': $(this).find('.headText').text(),
+           'resizable': false,
+           'draggable': false,
+            show: {
+                 effect: 'fade',
+                 duration : 180
+            },
+            hide: {
+                 effect: 'fade',
+                 duration : 280
+            }
+         });
+
+         $('#dialog .underOverlay').mouseenter(function(){
+            $(this).find('.dialogItem').css('opacity','1');
+         }).mouseleave(function(){
+             $(this).find('.dialogItem').css('opacity','0');
+         });
+
+         $('#dialog .underOverlay').click(function(){
+           var _this = $(this);
+
+           _this.toggleClass('activeGreen');
+           if( _this.hasClass('activeGreen' )){
+               _this.find('.dialogItem').fadeOut(100).next('img').removeClass('hideArrow').addClass('showArrow');
+               setTimeout(function(){
+                   _this.find('.dialogItem').fadeIn(400).next('img').removeClass('showArrow').addClass('hideArrow');
+                   _this.addClass('activeHover').find('.dialogItem').text('Убрать').css({'color':'#fefefe'});
+               },1000);
+           }else{
+               _this.removeClass('activeHover').find('.dialogItem').text('Добавить').css({'color':'#bdbdbd'});
+           }
+         });
+     });
+  });
 </script>
