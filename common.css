@@ -409,8 +409,12 @@ body{
     width: 270px;
 }
 
+.underImg.middle{
+    padding-top: 35px;
+}
+
 .underImg{
-  padding-top: 35px;
+  padding-top: 39px;
 }
 
 .underTitle{
@@ -436,10 +440,11 @@ body{
     color : #e53935;
     transition: 0.6s;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .servisesBlock{
-  padding-top: 90px;
+  padding-top: 130px;
 }
 
 .servisesBlock hr{
@@ -611,6 +616,7 @@ body{
     color:#fafafa;
     cursor: pointer;
     transition: 0.6s;
+    text-decoration: none;
 }
 
 .longBtnText{
