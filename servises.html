@@ -479,7 +479,7 @@
               );
               $('.blackBtn').val('ОТПРАВИТЬ').addClass('blackBtnSend').removeClass('blackBtn');
 
-              $('input[type=text]').on('click',function(){
+              $('input[type=text]').on('focus',function(){
                   $(this).next('hr').next('hr').css({'width' : '100%','opacity': '1'});
               }).blur(function(){
                   $(this).next('hr').next('hr').css({'width' : '0%','opacity': '0'});
