@@ -169,6 +169,20 @@
         padding-left: 12px;
     }
 
+    .angleLine{
+        font-family: robotoLight;
+        font-size: 24px;
+        line-height: 24px;
+        color : #fefefe;
+    }
+
+    .titlePart{
+        font-family: robotoBlack;
+        font-size: 24px;
+        line-height: 24px;
+        color: #c62828;
+    }
+
     .ui-dialog .ui-dialog-content{
         padding: 15px;
     }
@@ -204,6 +218,11 @@
 
     .ui-icon, .ui-widget-content .ui-icon{
         background: url('img/close.png') no-repeat !important;
+    }
+
+    .ui-widget-overlay{
+        background: #000000 !important;
+        opacity: 0.7;
     }
 
     #dialog .underOverlay{
@@ -282,6 +301,61 @@
         outline: none;
     }
 
+    .blackBtnSend{
+        width: 190px;
+        cursor: pointer;
+        height: 70px;
+        background: #212121;
+        box-shadow: 1px 1px 1px #ccc;
+        font-family: robotoMedium !important;
+        font-size: 14px !important;
+        color: #fefefe;
+        line-height: 24px;
+        border: none;
+        outline: none;
+    }
+
+    .sendForm{
+        margin: 0 auto;
+        width: 415px;
+        text-align: left;
+        padding-top: 40px;
+    }
+
+    .sendForm label{
+        font-family: robotoRegular;
+        font-size: 14px;
+        color: #999999;
+        cursor: pointer;
+    }
+
+    .sendForm input[type=text]{
+        margin-left: 15px;
+        border: none;
+        outline: none;
+        padding-top: 20px;
+    }
+
+    input[type=text] + hr{
+        border: 1px solid #bdbdbd;
+    }
+
+    input[type=text] + hr + hr{
+        border: 1px solid #212121;
+        transition : 0.4s;
+        margin-top: -11px;
+        width : 0%;
+        opacity: 0;
+    }
+
+    hr.last{
+        margin-top: -10px !important;
+    }
+
+    .firstInp{
+        padding-top: 0px !important;
+    }
+
 </style>
 
 <script>
@@ -355,7 +429,7 @@
             $(this).append('<span class="dialogItem">Добавить</span><img src="img/ok.png" class="hideArrow" alt="arrow" />');
          });
 
-         $('#dialog').html($('#dialog').html() + '<div class="blackContainer"><input type="button" value="ДАЛЕЕ" class="blackBtn" /></div>')
+         $('#dialog').html($('#dialog').html() + '<div class="blackContainer"><input type="button" value="ДАЛЕЕ" class="blackBtn" /></div>');
 
          $('#dialog').dialog({
            'modal':true,
@@ -392,6 +466,39 @@
                _this.removeClass('activeHover').find('.dialogItem').text('Добавить').css({'color':'#bdbdbd'});
            }
          });
+
+         $('.blackBtn').on('click',function(){
+          if(!$(this).hasClass('blackBtnSend')){
+              $('#dialog .underOverlayText').replaceWith(
+                      '<div class="sendForm">' +
+                      '<label class="dialogLabel" for="name">Ваше имя *</label><input class="firstInp" type="text" id="name" /><hr/><hr/>'+
+                      '<label class="dialogLabel" for="email">Ваша почта *</label><input type="text" id="email" /><hr/><hr/>'+
+                      '<label class="dialogLabel" for="phone">Номер телефона</label><input type="text" id="phone" /><hr/><hr/>'+
+                      '<label class="dialogLabel" for="message">Сообщение</label><input type="text" id="message" /><hr /><hr class="last" />'+
+                      '</div>'
+              );
+              $('.blackBtn').val('ОТПРАВИТЬ').addClass('blackBtnSend').removeClass('blackBtn');
+
+              $('input[type=text]').on('click',function(){
+                  $(this).next('hr').next('hr').css({'width' : '100%','opacity': '1'});
+              }).blur(function(){
+                  $(this).next('hr').next('hr').css({'width' : '0%','opacity': '0'});
+              });
+
+              var titlePart = '<span class="titlePart">ЗАЯВКА</span><span class="angleLine"> / </span>';
+              $("span.ui-dialog-title").html(titlePart + $('#dialog').dialog('option','title'));
+          }else{
+              alert('ТУТ ОТПРАВЛЯЕМ ДАННЫЕ');
+              $('#dialog').dialog('close');
+          }
+         });
+
+         $('.ui-widget-overlay').click(function(){
+             $('#dialog').dialog('close');
+         });
+
+
      });
+
   });
 </script>
