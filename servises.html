@@ -327,21 +327,24 @@
         font-size: 14px;
         color: #999999;
         cursor: pointer;
+        position: absolute;
     }
 
     .sendForm input[type=text]{
-        margin-left: 15px;
         border: none;
         outline: none;
-        padding-top: 20px;
+        font-family: robotoRegular;
+        font-size : 14px;
+        color : #212121;
+        width: 100%;
     }
 
     input[type=text] + hr{
-        border: 1px solid #bdbdbd;
+        border: 1px solid #c62828;
     }
 
     input[type=text] + hr + hr{
-        border: 1px solid #212121;
+        border: 1px solid #bdbdbd;
         transition : 0.4s;
         margin-top: -11px;
         width : 0%;
@@ -471,17 +474,21 @@
           if(!$(this).hasClass('blackBtnSend')){
               $('#dialog .underOverlayText').replaceWith(
                       '<div class="sendForm">' +
-                      '<label class="dialogLabel" for="name">Ваше имя *</label><input class="firstInp" type="text" id="name" /><hr/><hr/>'+
-                      '<label class="dialogLabel" for="email">Ваша почта *</label><input type="text" id="email" /><hr/><hr/>'+
-                      '<label class="dialogLabel" for="phone">Номер телефона</label><input type="text" id="phone" /><hr/><hr/>'+
+                      '<label class="dialogLabel" for="name">Ваше имя *</label><input class="firstInp" type="text" id="name" /><hr/><hr/><br/>'+
+                      '<label class="dialogLabel" for="email">Ваша почта *</label><input type="text" id="email" /><hr/><hr/><br/>'+
+                      '<label class="dialogLabel" for="phone">Номер телефона</label><input type="text" id="phone" /><hr/><hr/><br/>'+
                       '<label class="dialogLabel" for="message">Сообщение</label><input type="text" id="message" /><hr /><hr class="last" />'+
                       '</div>'
               );
               $('.blackBtn').val('ОТПРАВИТЬ').addClass('blackBtnSend').removeClass('blackBtn');
 
               $('input[type=text]').on('focus',function(){
+                  $(this).prev('label').fadeOut(150);
                   $(this).next('hr').next('hr').css({'width' : '100%','opacity': '1'});
               }).blur(function(){
+                  if (!($(this).val())){
+                      $(this).prev('label').fadeIn(150);
+                  }
                   $(this).next('hr').next('hr').css({'width' : '0%','opacity': '0'});
               });
 
@@ -496,8 +503,6 @@
          $('.ui-widget-overlay').click(function(){
              $('#dialog').dialog('close');
          });
-
-
      });
 
   });
