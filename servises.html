@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>Услуги</title>
+    <link rel="shortcut icon" type="image/png" href="img/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="common.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <script src="jquery-1.11.3.min.js"></script>
@@ -341,6 +342,7 @@
 
     input[type=text] + hr{
         border: 1px solid #eeeeee;
+        width : 100%
     }
 
     input[type=text] + hr + hr{
@@ -484,10 +486,12 @@
 
               $('input[type=text]').on('focus',function(){
                   $(this).prev('label').fadeOut(150);
+                  $(this).next('hr').css('border','1px solid #eeeeee');
                   $(this).next('hr').next('hr').css({'width' : '100%','opacity': '1'});
               }).blur(function(){
                   if (!($(this).val())){
                       $(this).prev('label').fadeIn(150);
+                      $(this).next('hr').css('border','1px solid #eeeeee');
                   }
                   $(this).next('hr').next('hr').css({'width' : '0%','opacity': '0'});
               });
@@ -495,8 +499,22 @@
               var titlePart = '<span class="titlePart">ЗАЯВКА</span><span class="angleLine"> / </span>';
               $("span.ui-dialog-title").html(titlePart + $('#dialog').dialog('option','title'));
           }else{
-              alert('ТУТ ОТПРАВЛЯЕМ ДАННЫЕ');
-              $('#dialog').dialog('close');
+              if( $('#name').val().length < 2 || $('#name').val().length > 40 ){
+                  $('#name + hr').css('border','1px solid #c62828');
+                  $('#name + hr,#name + hr + hr')
+                          .animate({'margin-left':'-5px','width':'99%'},100)
+                          .animate({'margin-left':'10px','width':'99%'},100)
+                          .animate({'margin-left':'0px','width':'100%'},100);
+              }
+              if( $('#email').val().length < 5 || $('#name').val().length > 30 ){
+                  $('#email + hr').css('border','1px solid #c62828');
+                  $('#email + hr,#email + hr + hr')
+                          .animate({'margin-left':'-5px','width':'99%'},100)
+                          .animate({'margin-left':'10px','width':'99%'},100)
+                          .animate({'margin-left':'0px','width':'100%'},100);
+              }
+              //  alert('ТУТ ОТПРАВЛЯЕМ ДАННЫЕ');
+            //  $('#dialog').dialog('close');
           }
          });
 
