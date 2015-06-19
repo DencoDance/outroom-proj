@@ -518,12 +518,17 @@
               });
 
               var n = 1;
-              $('textarea').keypress(function(){
+              $('textarea').keypress(function(event){
                  var height = $('textarea').height();
+
                  var length = $('.textLength').text($(this).val()).width();
                   if ( ((length/n) >= ($(this).width() - 55)) && $('textarea').height() < 75 ){
                       $('textarea').css('height',height + 15 +'px');
                       n++;
+                  }
+
+                  if(event.keyCode == '13' && $('textarea').height() < 75){
+                      $('textarea').css('height',height + 15 +'px');
                   }
               });
 
