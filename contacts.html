@@ -19,7 +19,15 @@
      </div>
 
      <div class="redBlock">
-        <div class="centered contacts"></div>
+        <div class="centered contacts">
+            <input type="text" placeholder="Ваше имя" id="name" />
+            <input type="text" placeholder="Ваша почта" id="email" />
+            <input type="text" placeholder="Ваш номер телефона" id="phone" />
+
+            <textarea placeholder="Сообщение" id="message"></textarea>
+
+            <input type="button" value="Отправить" class="blackBtn" />
+        </div>
      </div>
 
      <div class="publicLinks">
@@ -42,6 +50,79 @@
         position: fixed;
         top: 0;
     }
+
+    .centered.contacts{
+        padding-top: 100px;
+    }
+
+    .centered.contacts input[type=text]{
+        outline: none;
+        border: none;
+        width: 365px;
+        padding-left: 15px;
+        height: 50px;
+        display: inline;
+        font-family: robotoRegular;
+        font-size : 14px;
+        color : #666666;
+    }
+
+    #name{
+        float: left;
+        background:#fefefe no-repeat;
+        background-image: url('img/important.png');
+        background-position-y: 15px;
+        background-position-x: 340px;
+    }
+
+    #email{
+        margin-left: 15px;
+        background:#fefefe no-repeat;
+        background-image: url('img/important.png');
+        background-position-y: 15px;
+        background-position-x: 340px;
+    }
+
+    #phone{
+        float: right;
+    }
+
+    .centered.contacts textarea{
+        overflow: hidden;
+        word-wrap: break-word;
+        margin-top: 15px;
+        background: #fefefe;
+        resize: none;
+        border: none;
+        font-family: robotoRegular;
+        font-size : 14px;
+        color : #666666;
+        width: 1153px;
+        padding-left: 15px;
+        padding-top: 15px;
+        height: 120px;
+        outline: none;
+        background:#fefefe no-repeat;
+        background-image: url('img/important.png');
+        background-position-y: 55px;
+        background-position-x: 1120px;
+    }
+
+    .blackBtn{
+        width: 190px;
+        cursor: pointer;
+        height: 70px;
+        margin-top: 11px;
+        background: #212121;
+        font-family: robotoMedium !important;
+        font-size: 14px !important;
+        color: #fefefe;
+        line-height: 24px;
+        border: none;
+        outline: none;
+        float: left;
+    }
+
 </style>
 
 <script>
