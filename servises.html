@@ -12,6 +12,7 @@
   </head>
 
   <body>
+  <span class="textLength"></span>
     <div class="blockService">
         <header class="mainHeader"></header>
             <div class="centered serviceContent">
@@ -340,12 +341,27 @@
         width: 100%;
     }
 
-    input[type=text] + hr{
+    .sendForm textarea{
+       padding: 4px;
+       overflow: hidden;
+       word-wrap: break-word;
+       resize: none;
+       border: none;
+       transition: 0.5s;
+       font-family: robotoRegular;
+       font-size : 14px;
+       color : #212121;
+       width: 100%;
+       height: 15px;
+       outline: none;
+    }
+
+    input[type=text] + hr,textarea + hr{
         border: 1px solid #eeeeee;
         width : 100%
     }
 
-    input[type=text] + hr + hr{
+    input[type=text] + hr + hr,textarea + hr + hr{
         border: 1px solid #bdbdbd;
         transition : 0.4s;
         margin-top: -11px;
@@ -359,6 +375,11 @@
 
     .firstInp{
         padding-top: 0px !important;
+    }
+
+    .textLength{
+        position : absolute;
+        opacity : 1;
     }
 
 </style>
@@ -479,12 +500,12 @@
                       '<label class="dialogLabel" for="name">Ваше имя *</label><input class="firstInp" type="text" id="name" /><hr/><hr/><br/>'+
                       '<label class="dialogLabel" for="email">Ваша почта *</label><input type="text" id="email" /><hr/><hr/><br/>'+
                       '<label class="dialogLabel" for="phone">Номер телефона</label><input type="text" id="phone" /><hr/><hr/><br/>'+
-                      '<label class="dialogLabel" for="message">Сообщение</label><input type="text" id="message" /><hr /><hr class="last" />'+
+                      '<label class="dialogLabel" for="message">Сообщение</label><textarea maxlength="200" id="message" autocomplete="off"></textarea><hr /><hr class="last" />'+
                       '</div>'
               );
               $('.blackBtn').val('ОТПРАВИТЬ').addClass('blackBtnSend').removeClass('blackBtn');
 
-              $('input[type=text]').on('focus',function(){
+              $('input[type=text],textarea').on('focus',function(){
                   $(this).prev('label').fadeOut(150);
                   $(this).next('hr').css('border','1px solid #eeeeee');
                   $(this).next('hr').next('hr').css({'width' : '100%','opacity': '1'});
@@ -494,6 +515,16 @@
                       $(this).next('hr').css('border','1px solid #eeeeee');
                   }
                   $(this).next('hr').next('hr').css({'width' : '0%','opacity': '0'});
+              });
+
+              var n = 1;
+              $('textarea').keypress(function(){
+                 var height = $('textarea').height();
+                 var length = $('.textLength').text($(this).val()).width();
+                  if ( ((length/n) >= ($(this).width() - 55)) && $('textarea').height() < 75 ){
+                      $('textarea').css('height',height + 15 +'px');
+                      n++;
+                  }
               });
 
               var titlePart = '<span class="titlePart">ЗАЯВКА</span><span class="angleLine"> / </span>';
