@@ -292,5 +292,26 @@
                 }
             }
         });
+
+        $('.select.multi').click(function(event){
+
+            var service = '';
+
+            if ( $('.servVal.choice').length ){
+                $('.servVal.choice').each(function(){
+                    service += $(this).text() + ', '
+                });
+
+                service = service.substring(0,service.length - 2);
+
+                if ( service.length > 70 ){
+                    service = service.substr(0,65) + '...'
+                }
+
+                $('.select.multi').val('').val(service);
+            }else{
+                $('.select.multi').val('');
+            }
+        });
     });
 </script>
