@@ -20,11 +20,38 @@
 
      <div class="redBlock">
         <div class="centered contacts">
-            <input type="text" placeholder="Ваше имя" id="name" />
-            <input type="text" placeholder="Ваша почта" id="email" />
-            <input type="text" placeholder="Ваш номер телефона" id="phone" />
+            <input maxlength="40" class="smallInp" type="text" placeholder="Ваше имя" id="name" />
+            <input maxlength="30" class="smallInp" type="text" placeholder="Ваша почта" id="email" />
+            <input maxlength="30" class="smallInp" type="text" placeholder="Ваш номер телефона" id="phone" />
 
-            <textarea placeholder="Сообщение" id="message"></textarea>
+            <textarea maxlength="500" placeholder="Сообщение" id="message"></textarea>
+
+            <input type="text" readonly class="select" placeholder="Сумма" />
+
+            <div class="blockPrice">
+                <div class="price slide">
+                    <span class="priceVal">1000 - 3000</span>
+                    <span class="priceVal">3000 - 5000</span>
+                    <span class="priceVal">5000 - 7000</span>
+                    <span class="priceVal">7000 - 10000</span>
+                </div>
+            </div>
+
+            <input type="text" readonly class="select multi" placeholder="Услуга" />
+
+            <div class="blockServ">
+                <div class="serv slide">
+                    <span class="servVal">Анализ бизнеса и целевой аудитории</span>
+                    <span class="servVal">Разработка концепции и дизайна сайта</span>
+                    <span class="servVal">Верстка и разработка функционала сайта</span>
+                    <span class="servVal">Профессиональный копирайтинг</span>
+                    <span class="servVal">Настройка контекстной рекламной кампании</span>
+                    <span class="servVal">Обучение работе с сайтом</span>
+                    <span class="servVal">Техническая поддержка</span>
+                    <span class="servVal">Регулярный анализ конверсии</span>
+                    <span class="servVal">Внутренняя SEO-оптимизация сайта</span>
+                </div>
+            </div>
 
             <input type="button" value="Отправить" class="blackBtn" />
         </div>
@@ -55,16 +82,59 @@
         padding-top: 100px;
     }
 
-    .centered.contacts input[type=text]{
+    .priceVal,.servVal{
+        border-left: 3px solid transparent;
+        display: block;
+        height: 30px;
+        font-family: robotoRegular;
+        font-size : 14px;
+        color : #666666;
+        padding-left: 12px;
+        padding-top: 15px;
+        transition: 0.3s;
+    }
+
+    .priceVal:hover,.servVal:hover{
+        background: #ccc;
+    }
+
+    .centered.contacts .smallInp{
         outline: none;
         border: none;
-        width: 365px;
+        width: 305px;
+        padding-right: 60px;
         padding-left: 15px;
         height: 50px;
         display: inline;
         font-family: robotoRegular;
         font-size : 14px;
         color : #666666;
+    }
+
+    .select{
+        height: 50px;
+        padding-left: 15px;
+        width: 562px;
+        display: inline;
+        font-family: robotoRegular;
+        font-size : 14px;
+        color : #666666;
+        outline: none;
+        border: none;
+        margin-top: 11px;
+        float: left;
+        background:#fefefe no-repeat;
+        background-image: url('img/down.png');
+        background-position-y: 24px;
+        background-position-x: 546px;
+    }
+
+    .rotate{
+        background-image: url('img/up.png') !important;
+    }
+
+    .select.multi{
+        float: right;
     }
 
     #name{
@@ -97,7 +167,8 @@
         font-family: robotoRegular;
         font-size : 14px;
         color : #666666;
-        width: 1153px;
+        width: 1095px;
+        padding-right: 60px;
         padding-left: 15px;
         padding-top: 15px;
         height: 120px;
@@ -105,7 +176,7 @@
         background:#fefefe no-repeat;
         background-image: url('img/important.png');
         background-position-y: 55px;
-        background-position-x: 1120px;
+        background-position-x: 1129px;
     }
 
     .blackBtn{
@@ -123,6 +194,36 @@
         float: left;
     }
 
+    .price{
+        display: none;
+        position: absolute;
+        background: #fefefe;
+        width: 577px;
+        height: 0px;
+        box-shadow: 1px 1px 1px #ccc;
+        margin-top: 70px;
+        opacity: 0;
+    }
+
+    .serv{
+        display: none;
+        position: absolute;
+        background: #fefefe;
+        width: 577px;
+        height: 0px;
+        right: 89px;
+        height: 180px;
+        max-height: 180px;
+        overflow-y: auto;
+        box-shadow: 1px 1px 1px #ccc;
+        margin-top: 70px;
+        opacity: 0;
+    }
+
+    .blockPrice,.blockServ{
+        display: inline;
+    }
+
 </style>
 
 <script>
@@ -130,5 +231,66 @@
 
     $(window).scroll(function () {
         mainHeader();
+    });
+
+    $(function(){
+        $('.select').click(function() {
+          $(this).toggleClass('rotate');
+            var block = $(this).next().find('.slide:first');
+
+            if ( !block.hasClass('open') )
+            {
+                block.css('display','block');
+                block.addClass('open')
+                     .stop().animate({'opacity': '1', 'height': '180'}, 250);
+            }else{
+                block.removeClass('open')
+                     .stop().animate({'height': '0', 'opacity': '0'}, 300)
+                     .finish(block.slideUp(100));
+            }
+        });
+
+        $('.priceVal').click(function(){
+         $('.price').removeClass('open')
+                    .stop().animate({'height': '0', 'opacity': '0'}, 300)
+                    .finish($('.price').slideUp(100));
+
+         $('.select:first').val($(this).text()).removeClass('rotate');
+        });
+
+        $('.servVal').click(function(){
+            if( !$(this).hasClass('choice') ){
+                $(this).css('border-left','3px solid #212121').addClass('choice');
+            }else{
+                $(this).css('border-left','3px solid transparent').removeClass('choice');
+            }
+        });
+
+        $('.redBlock').click(function(event){
+            if ( $(event.target).hasClass('redBlock') ){
+              $('.price,.serv').removeClass('open')
+                      .stop().animate({'height': '0', 'opacity': '0'}, 300)
+                      .finish($('.price,.serv').slideUp(100));
+
+              $('.select').removeClass('rotate');
+
+                var service = '';
+
+                if ( $('.servVal.choice').length ){
+                  $('.servVal.choice').each(function(){
+                     service += $(this).text() + ', '
+                  });
+                  service = service.substring(0,service.length - 2);
+
+                  if ( service.length > 70 ){
+                    service = service.substr(0,65) + '...'
+                  }
+
+                  $('.select.multi').val('').val(service);
+                }else{
+                  $('.select.multi').val('');
+                }
+            }
+        });
     });
 </script>
