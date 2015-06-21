@@ -229,24 +229,6 @@
 
 <script>
 
-    function servicePrint(){
-      var service = '';
-
-      if ( $('.servVal.choice').length ){
-        $('.servVal.choice').each(function(){
-             service += $(this).text() + ', '
-        });
-        service = service.substring(0,service.length - 2);
-
-        if ( service.length > 70 ){
-            service = service.substr(0,65) + '...'
-        }
-            $('.select.multi').val('').val(service);
-        }else{
-            $('.select.multi').val('');
-        }
-    }
-
     mainHeader();
 
     $(window).scroll(function () {
@@ -261,7 +243,6 @@
 
          $('.select').not(this).removeClass('rotate');
          $(this).toggleClass('rotate');
-         servicePrint();
 
          var block = $(this).next().find('.slide:first');
 
@@ -291,6 +272,22 @@
             }else{
                 $(this).css('border-left','3px solid transparent').removeClass('choice');
             }
+
+            var service = '';
+
+            if ( $('.servVal.choice').length ){
+                $('.servVal.choice').each(function(){
+                    service += $(this).text() + ', '
+                });
+                service = service.substring(0,service.length - 2);
+
+                if ( service.length > 70 ){
+                    service = service.substr(0,65) + '...'
+                }
+                $('.select.multi').val('').val(service);
+            }else{
+                $('.select.multi').val('');
+            }
         });
 
         $('.redBlock').click(function(event){
@@ -300,12 +297,7 @@
                                .finish($('.price,.serv').slideUp(100));
 
               $('.select').removeClass('rotate');
-              servicePrint();
             }
-        });
-
-        $('.select.multi').click(function(event){
-            servicePrint();
         });
 
         $('.serv').offset({'left':$('.select.multi').offset().left});

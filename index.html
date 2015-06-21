@@ -264,9 +264,8 @@
 
             var a = $(window).scrollTop();
 
-            if ( a >= 1 &&  $('.intro').height() > 0 ){
-              $('.intro').css('padding-top','1px');
-              $(window).scrollTop(1);
+            if ( a >= 2 &&  $('.intro').height() > 0 ){
+              $(window).scrollTop(2);
 
               $('.intro').height($('.intro').height() - 40);
               $('.intro.black').css('opacity',Math.round($('.intro.black').css('opacity')*100)/100 + 0.03);
@@ -281,13 +280,12 @@
                   )
                       $(this).fadeOut(180);
               });
-            }else if( !a && $('.intro').height() <= introHeight ){
-              $('.intro').css('padding-top','0px');
-              $(window).scrollTop(0);
+            }else if( a <= 1 && $('.intro').height() <= introHeight ){
+              $(window).scrollTop(1);
 
               $('.mainHeader').css({'position':'initial'});
 
-              $('.intro').height($('.intro').height() + 60);
+              $('.intro').height($('.intro').height() + 40);
 
               if ($('.intro').height() > introHeight ){
                 $('.intro').css('height',introHeight);
