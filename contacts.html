@@ -235,6 +235,9 @@
         mainHeader();
     });
 
+    var validEml = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+    var service = '';
+
     $(function(){
         $('.select').click(function() {
          $('.select').not(this).next().find('.slide').removeClass('open')
@@ -273,18 +276,19 @@
                 $(this).css('border-left','3px solid transparent').removeClass('choice');
             }
 
-            var service = '';
+            var print = '';
+            service = '';
 
             if ( $('.servVal.choice').length ){
                 $('.servVal.choice').each(function(){
                     service += $(this).text() + ', '
                 });
-                service = service.substring(0,service.length - 2);
+                print = service = service.substring(0,service.length - 2);
 
-                if ( service.length > 70 ){
-                    service = service.substr(0,65) + '...'
+                if ( print.length > 70 ){
+                    print = service.substr(0,65) + '...'
                 }
-                $('.select.multi').val('').val(service);
+                $('.select.multi').val('').val(print);
             }else{
                 $('.select.multi').val('');
             }
@@ -303,6 +307,41 @@
         $('.serv').offset({'left':$('.select.multi').offset().left});
         $(window).resize(function(){
             $('.serv').offset({'left':$('.select.multi').offset().left});
+        });
+
+        $('.blackBtn').click(function(){
+            if( $('#name').val().length < 2 || $('#name').val().length > 40 ){
+                $('#name')
+                        .animate({'margin-top': '-10px'},100)
+                        .animate({'margin-top': '0px'},300);
+            }
+            else if( ($('#email').val().length < 5 || $('#email').val().length > 30) || !( validEml.test($('#email').val()) ) ){
+                $('#email')
+                        .animate({'margin-top': '-10px'},100)
+                        .animate({'margin-top': '0px'},300);
+
+            }
+            else if( !( /^[0-9]/.test( + $('#phone').val())) ) {
+                $('#phone')
+                        .animate({'margin-top': '-10px'},100)
+                        .animate({'margin-top': '0px'},300);
+            }
+            else if( $('#message').val().length < 2 || $('#message').val().length > 400 ){
+                $('#message')
+                        .animate({'margin-left':'-10px'},150)
+                        .animate({'margin-left':'10px'},150)
+                        .animate({'margin-left':'0px'},200);
+            }else{
+                var person = {
+                    '1.Name': $('#name').val(),
+                    '2.Email': $('#email').val(),
+                    '3.Phone': $('#phone').val(),
+                    '4.Message': $('#message').val(),
+                    '5.Price' : $('.select:first').val(),
+                    '6.Service' : service
+
+                };
+            }
         });
     });
 </script>

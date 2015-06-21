@@ -30,6 +30,12 @@
                 <span class="roboBold">В МИРЕ СОВРЕМЕННОГО <span class="roboBoldBig">ВЕБ-АУТСОРСИНГА</span></span>
                 <hr />
              </div>
+
+             <div class="scrollBlock">
+                 <span class="scroll">Листай вниз</span>
+                 <img src="img/scroll.png" alt="scroll" />
+             </div>
+
              <div class="introTextLast">
                  <span>МЫ РАБОТАЕМ, НЕ СТРЕМЯСЬ ОКРУЖИТЬ СЕБЯ ОФИСНЫМИ СТЕНАМИ</span><br/>
                  <span>СУТЬ НАШЕЙ КОРПОРАТИВНОЙ КУЛЬТУРЫ ПРОСТА - МЫ РАЗРАБАТЫВАЕМ ПРОСТЫЕ,</span><br/>
@@ -252,7 +258,7 @@
     $(function(){
         $(window).on('scroll mousewheel',function(event){
 
-            if( $('.intro.black').css('opacity') > 0.06 ){
+            if( $('.intro.black').css('opacity') > 0.03 ){
                 $('.intro.black').css('display','block');
             }else{
                 $('.intro.black').css('display','none');
@@ -291,7 +297,7 @@
                 $('.intro').css('height',introHeight);
               }
 
-              $('.intro.black').css('opacity',Math.round($('.intro.black').css('opacity')*100)/100 - 0.06);
+              $('.intro.black').css('opacity',Math.round($('.intro.black').css('opacity')*100)/100 - 0.03);
 
               var i = 0;
               $('.intro .centered').children().each(function()

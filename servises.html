@@ -444,6 +444,7 @@
 <script>
 
  var services;
+ var validEml = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
 
   $(function(){
      $('.overlayContainer').click(function(){
@@ -553,7 +554,7 @@
                           .animate({'margin-left':'10px','width':'99%'},100)
                           .animate({'margin-left':'0px','width':'100%'},100);
               }
-              else if( $('#email').val().length < 5 || $('#name').val().length > 30 ){
+              else if( $('#email').val().length < 5 || $('#email').val().length > 30 || !( validEml.test($('#email').val()) ) ){
                   $('#email + hr').css('border','1px solid #c62828');
                   $('#email + hr')
                           .animate({'margin-left':'-5px','width':'99%'},100)
@@ -572,12 +573,11 @@
                       '1.Name': $('#name').val(),
                       '2.Email': $('#email').val(),
                       '3.Phone': $('#phone').val(),
-                      '4.Message': $('#message').val()
+                      '4.Message': $('#message').val(),
+                      '5.Service' : services
                   };
 
-                 // $.post('mail.php',person,services);
-                 // console.log(person);
-                 // console.log(services);
+                 // $.post('mail.php',person);
                   $('#dialog').dialog('close');
               }
           }
