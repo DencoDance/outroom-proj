@@ -873,6 +873,9 @@ footer .logo{
     height: 200px;
     margin: -3px;
     transition: 0.4s;
+    -webkit-filter: brightness(0.99);
+    -moz-filter: brightness(0.99);
+    filter: brightness(0.99);
 }
 
 .darkImg{
@@ -885,8 +888,6 @@ footer .logo{
     position: absolute;
     z-index: 1;
     height: 0px;
-    width: 290px;
-    display: none;
     cursor: pointer;
     text-align: left;
     padding-top: 20px;

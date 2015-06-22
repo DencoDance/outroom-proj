@@ -163,6 +163,12 @@
 
     $('.overlayImgTab').each(function(){
        $(this).offset({'left':$(this).next('img').offset().left,'top':$(this).next('img').offset().top});
+       $(this).css('width',$(this).next('img').css('width'));
+    });
+
+    $(window).resize(function(){
+        $(this).offset({'left':$(this).next('img').offset().left,'top':$(this).next('img').offset().top});
+        $(this).css('width',$(this).next('img').css('width'));
     });
 
     var marginTopStart = $('.overlayImgTab:first').css('margin-top');
@@ -173,8 +179,8 @@
         $(this).addClass('darkImg');
 
         $(this).prev('.overlayImgTab:first')
-                .css('display','block')
-                .stop().animate({'height':marginTopFinish ,'margin-top':marginTopStart},200);
+                .removeClass('hidden')
+                .stop().animate({'height':marginTopFinish - 10 ,'margin-top':marginTopStart},200);
         $(this).prev('.overlayImgTab:first').find('.overlayUpperText').animate({'opacity':'1'},400);
     });
 
@@ -183,7 +189,7 @@
 
         $(this).find('.overlayUpperText').animate({'opacity':'0'},300);
         $(this).stop().animate({'height':0 ,'margin-top':marginTopFinish},150)
-               .css('display','none');
+               .addClass('hidden');
 
     });
 </script>
