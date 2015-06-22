@@ -186,15 +186,22 @@
         $(this).prev('.overlayImgTab:first')
                .removeClass('hidden')
                .stop().animate({'height':marginTopFinish ,'margin-top':marginTopStart},200);
-        $(this).prev('.overlayImgTab:first').find('.overlayUpperText').animate({'opacity':'1'},400);
+        $(this).prev('.overlayImgTab:first').find('.overlayUpperText').stop().animate({'opacity':'1'},350);
     });
 
     $('.overlayImgTab').mouseleave(function(){
         $(this).next('.oneLineImg').removeClass('darkImg');
 
-        $(this).find('.overlayUpperText').animate({'opacity':'0'},300);
+        $(this).find('.overlayUpperText').animate({'opacity':'0'},350);
         $(this).stop().animate({'height':0 ,'margin-top':marginTopFinish},150)
                .addClass('hidden');
 
+    });
+
+    $('.tabImg').mouseleave(function(){
+        $('.oneLineImg').removeClass('darkImg');
+        $('.overlayUpperText').stop().animate({'opacity':'1'},350);
+        $('.overlayImgTab').stop().animate({'height':'0','margin-top':marginTopFinish},150)
+                .addClass('hidden');
     });
 </script>
