@@ -176,11 +176,16 @@
     $('.overlayImgTab').css('margin-top',marginTopFinish);
 
     $('.oneLineImg').mouseenter(function(){
-        $(this).addClass('darkImg');
 
+        $('.oneLineImg').removeClass('darkImg');
+        $('.overlayUpperText').css('opacity','0');
+        $('.overlayImgTab').css({'height':'0px','margin-top':marginTopFinish})
+        .addClass('hidden');
+
+        $(this).addClass('darkImg');
         $(this).prev('.overlayImgTab:first')
-                .removeClass('hidden')
-                .stop().animate({'height':marginTopFinish - 10 ,'margin-top':marginTopStart},200);
+               .removeClass('hidden')
+               .stop().animate({'height':marginTopFinish ,'margin-top':marginTopStart},200);
         $(this).prev('.overlayImgTab:first').find('.overlayUpperText').animate({'opacity':'1'},400);
     });
 
