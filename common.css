@@ -885,7 +885,7 @@ footer .logo{
     position: absolute;
     z-index: 1;
     height: 0px;
-    width: 292px;
+    width: 290px;
     display: none;
     cursor: pointer;
     text-align: left;
@@ -898,4 +898,12 @@ footer .logo{
     font-family: robotoMedium;
     font-size: 14px;
     color: #fefefe;
+    opacity: 0;
+}
+
+.overlayUpperText.look{
+    font-family: robooItalic;
+    color: #e53935;
+    text-decoration: underline;
+    line-height: 140px;
 }
