@@ -821,3 +821,81 @@ footer .logo{
     padding-left: 0px;
 }
 
+/* W O R K */
+.workTabs{
+    width: 100%;
+    max-width: 1920px;
+    height: 850px;
+}
+
+.centered.worksTab{
+    padding-top: 120px;
+    text-align: center;
+}
+
+.centered.worksTab hr{
+    width : 85px;
+    border : 1px solid #e74c49;
+}
+
+.tabs{
+    padding-top: 100px;
+}
+
+.tab{
+    display: inline-block;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-family: robotoMedium;
+    font-size: 12px;
+    background: #eeeeee;
+    color : #b3b3b3;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.tabImg{
+    padding-top: 25px;
+}
+
+.tabActive{
+    background: #e53935 !important;
+    color : #fefefe !important;
+}
+
+.oneLineImg{
+    display: inline-block;
+    width: 294px;
+    max-width: 294px;
+    height: 200px;
+    margin: -3px;
+    transition: 0.4s;
+}
+
+.darkImg{
+    -webkit-filter: brightness(0.6) !important;
+    -moz-filter: brightness(0.6) !important;
+    filter: brightness(0.6) !important;
+}
+
+.overlayImgTab{
+    position: absolute;
+    z-index: 1;
+    height: 0px;
+    width: 292px;
+    display: none;
+    cursor: pointer;
+    text-align: left;
+    padding-top: 20px;
+    padding-left: 25px;
+    line-height: 18px;
+}
+
+.overlayUpperText{
+    font-family: robotoMedium;
+    font-size: 14px;
+    color: #fefefe;
+}

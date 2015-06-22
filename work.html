@@ -44,6 +44,89 @@
       </div>
   </div>
 
+  <div class='workTabs'>
+    <div class="centered worksTab">
+          <span class="headText">БОЛЬШЕ НАШИХ РАБОТ</span>
+          <hr />
+
+      <div class="tabs">
+        <a class="tab tabActive">ВСЕ</a>
+        <a class="tab">ЛОГО</a>
+        <a class="tab">ЛЕНДИНГ</a>
+        <a class="tab">МАГАЗИН</a>
+      </div>
+
+      <div class="tabImg">
+
+          <div class="overlayImgTab">
+            <span class="overlayUpperText">ОФИЦИАЛЬНЫЙ САЙТ</span><br/>
+            <span class="overlayUpperText">ОФИЦИАЛЬНЫЙ САЙТ</span><br/>
+            <span class="overlayUpperText">ОФИЦИАЛЬНЫЙ САЙТ</span><br/>
+          </div>
+
+          <img class="oneLineImg" src="img/photo2.png" />
+
+          <div class="overlayImgTab">
+              <span class="overlayUpperText">ОФИЦИАЛЬНЫЙ САЙТ</span><br/>
+              <span class="overlayUpperText">ОФИЦИАЛЬНЫЙ САЙТ</span><br/>
+              <span class="overlayUpperText">ОФИЦИАЛЬНЫЙ САЙТ</span><br/>
+          </div>
+
+          <img class="oneLineImg" src="img/photo2.png" />
+
+          <div class="overlayImgTab">
+              <span class="overlayUpperText">ОФИЦИАЛЬНЫЙ САЙТ</span><br/>
+              <span class="overlayUpperText">ОФИЦИАЛЬНЫЙ САЙТ</span><br/>
+              <span class="overlayUpperText">ОФИЦИАЛЬНЫЙ САЙТ</span><br/>
+          </div>
+
+          <img class="oneLineImg" src="img/photo2.png" />
+
+          <div class="overlayImgTab">
+              <span class="overlayUpperText">ОФИЦИАЛЬНЫЙ САЙТ</span><br/>
+              <span class="overlayUpperText">ОФИЦИАЛЬНЫЙ САЙТ</span><br/>
+              <span class="overlayUpperText">ОФИЦИАЛЬНЫЙ САЙТ</span><br/>
+          </div>
+
+          <img class="oneLineImg" src="img/photo2.png" />
+
+          <div class="overlayImgTab">
+              <span class="overlayUpperText">ОФИЦИАЛЬНЫЙ САЙТ</span><br/>
+              <span class="overlayUpperText">ОФИЦИАЛЬНЫЙ САЙТ</span><br/>
+              <span class="overlayUpperText">ОФИЦИАЛЬНЫЙ САЙТ</span><br/>
+          </div>
+
+          <img class="oneLineImg" src="img/photo2.png" />
+
+          <div class="overlayImgTab">
+              <span class="overlayUpperText">ОФИЦИАЛЬНЫЙ САЙТ</span><br/>
+              <span class="overlayUpperText">ОФИЦИАЛЬНЫЙ САЙТ</span><br/>
+              <span class="overlayUpperText">ОФИЦИАЛЬНЫЙ САЙТ</span><br/>
+          </div>
+
+          <img class="oneLineImg" src="img/photo2.png" />
+
+          <div class="overlayImgTab">
+              <span class="overlayUpperText">ОФИЦИАЛЬНЫЙ САЙТ</span><br/>
+              <span class="overlayUpperText">ОФИЦИАЛЬНЫЙ САЙТ</span><br/>
+              <span class="overlayUpperText">ОФИЦИАЛЬНЫЙ САЙТ</span><br/>
+          </div>
+
+          <img class="oneLineImg" src="img/photo2.png" />
+
+          <div class="overlayImgTab">
+              <span class="overlayUpperText">ОФИЦИАЛЬНЫЙ САЙТ</span><br/>
+              <span class="overlayUpperText">ОФИЦИАЛЬНЫЙ САЙТ</span><br/>
+              <span class="overlayUpperText">ОФИЦИАЛЬНЫЙ САЙТ</span><br/>
+          </div>
+
+          <img class="oneLineImg" src="img/photo2.png" />
+
+      </div>
+    </div>
+  </div>
+
+
   <a href="contacts.html" class="longBtn"></a>
 
   <footer></footer>
@@ -63,5 +146,34 @@
 
     $(window).scroll(function () {
         mainHeader();
+    });
+
+    $('.tab').click(function(){
+        $('.tab').removeClass('tabActive');
+        $(this).addClass('tabActive');
+    });
+
+    $('.overlayImgTab').each(function(){
+       $(this).offset({'left':$(this).next('img').offset().left,'top':$(this).next('img').offset().top});
+    });
+
+    var marginTopStart = $('.overlayImgTab:first').css('margin-top');
+    var marginTopFinish = $('.oneLineImg:first').height();
+    $('.overlayImgTab').css('margin-top',marginTopFinish);
+
+    $('.oneLineImg').mouseenter(function(){
+        $(this).addClass('darkImg');
+
+        $(this).prev('.overlayImgTab:first')
+                .css('display','block')
+                .stop().animate({'height':marginTopFinish ,'margin-top':marginTopStart},200);
+    });
+
+    $('.overlayImgTab').mouseleave(function(){
+        $(this).next('.oneLineImg').removeClass('darkImg');
+
+        $(this).stop().animate({'height':0 ,'margin-top':marginTopFinish},150)
+               .css('display','none');
+
     });
 </script>
