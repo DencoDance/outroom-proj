@@ -908,3 +908,9 @@ footer .logo{
     text-decoration: underline;
     line-height: 140px;
 }
+
+.overlayUpperText.arrow{
+    padding-left: 15px;
+    font-family: robooItalic;
+    color: #e53935;
+}
