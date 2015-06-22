@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Блог</title>
+    <link rel="shortcut icon" type="image/png" href="img/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="common.css">
+    <script src="jquery-1.11.3.min.js"></script>
+    <script src="common.js"></script>
+</head>
+
+<body>
+  <div class="blogBlock">
+      <header class="mainHeader"></header>
+          <div class="centered blog">
+              <span class="headText">БЛОГ</span>
+              <hr />
+
+              <div class="tabs">
+                  <a class="tab tabActive">ВСЕ</a>
+                  <a class="tab">ЛОГО</a>
+                  <a class="tab">ЛЕНДИНГ</a>
+                  <a class="tab">МАГАЗИН</a>
+              </div>
+
+              <div class="servisesBlock">
+                  <a href="servises.html" class="servises">Загрузить еще</a>
+                  <hr />
+              </div>
+          </div>
+  </div>
+
+  <a href="contacts.html" class="longBtn"></a>
+
+  <footer></footer>
+</body>
+</html>
+
+<style>
+    header{
+        position: fixed;
+        top: 0;
+    }
+</style>
+
+<script>
+    mainHeader();
+
+    $(window).scroll(function () {
+        mainHeader();
+    });
+
+    $('.tab').click(function(){
+        $('.tab').removeClass('tabActive');
+        $(this).addClass('tabActive');
+    });
+</script>

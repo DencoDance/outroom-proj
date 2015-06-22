@@ -914,3 +914,14 @@ footer .logo{
     font-family: robooItalic;
     color: #e53935;
 }
+
+/* B L O G */
+.centered.blog{
+    padding-top: 120px;
+    text-align: center;
+}
+
+.centered.blog hr{
+    width : 85px;
+    border : 1px solid #e74c49;
+}
