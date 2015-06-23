@@ -88,9 +88,10 @@ body{
     font-family: robotoMedium;
     font-size: 0.625em;
     line-height: 41px;
+    position: absolute;
     color: #bdbdbd;
     text-decoration: underline;
-    padding-right: 21.5%;
+    left: 49.5%;
     cursor: pointer;
 }
 
@@ -106,6 +107,50 @@ body{
 .logo{
     width: 180px;
     height: 43px;
+}
+
+.mobileMenu{
+    float: right;
+    margin-top: 12px;
+    cursor: pointer;
+    display: none;
+}
+
+@media screen and (max-width: 1010px) {
+    .mobileMenu{
+      display: inherit;
+    }
+    .headerLinks.dark{
+        display:none;
+    }
+}
+
+.mobileMenuLinks{
+    font-size: 0.875em;
+    font-family: robotoMedium;
+    position: absolute;
+    text-align: left;
+    width: 130px;
+    background: #fefefe;
+    box-shadow: 1px 1px 1px #eeeeee;
+    margin-left: -105px;
+    display: none;
+}
+
+.mobileMenuLinks a {
+    margin: 25px;
+    text-decoration: inherit;
+    display: block;
+    color : rgb(21,21,21);
+    transition: 0.6s;
+}
+
+.mobileMenuLinks a:visited{
+    color : rgb(21,21,21);
+}
+
+.mobileMenuLinks a:hover{
+    color : #e74c49;
 }
 
 .headerLinks{
