@@ -22,12 +22,54 @@
                   <a class="tab">ЛЕНДИНГ</a>
                   <a class="tab">МАГАЗИН</a>
               </div>
-
-              <div class="servisesBlock">
-                  <a href="servises.html" class="servises">Загрузить еще</a>
-                  <hr />
-              </div>
           </div>
+  </div>
+
+  <div class="blogItem first">
+      <hr />
+      <p class="smallItalic blog">20 апреля, 2015</p>
+      <span class="bigCont blog">РЕАЛИЗУЕМ ЕЩЁ БОЛЕЕ БЕЗОПАСНЫЙ VPN-ПРОТОКОЛ</span><br/>
+      <p class="smallItalic blog">- Новости</p>
+      <hr/>
+  </div>
+
+  <div class="blogItem next">
+      <hr />
+      <p class="smallItalic blog">20 апреля, 2015</p>
+      <span class="bigCont blog">РЕАЛИЗУЕМ ЕЩЁ БОЛЕЕ БЕЗОПАСНЫЙ VPN-ПРОТОКОЛ</span><br/>
+      <p class="smallItalic blog">- Новости</p>
+      <hr/>
+  </div>
+
+  <div class="blogItem next">
+      <hr />
+      <p class="smallItalic blog">20 апреля, 2015</p>
+      <span class="bigCont blog">РЕАЛИЗУЕМ ЕЩЁ БОЛЕЕ БЕЗОПАСНЫЙ VPN-ПРОТОКОЛ</span><br/>
+      <p class="smallItalic blog">- Новости</p>
+      <hr/>
+  </div>
+
+  <div class="blogItem next">
+      <hr />
+      <p class="smallItalic blog">20 апреля, 2015</p>
+      <span class="bigCont blog">РЕАЛИЗУЕМ ЕЩЁ БОЛЕЕ БЕЗОПАСНЫЙ VPN-ПРОТОКОЛ</span><br/>
+      <p class="smallItalic blog">- Новости</p>
+      <hr/>
+  </div>
+
+  <div class="blogItem next">
+      <hr />
+      <p class="smallItalic blog">20 апреля, 2015</p>
+      <span class="bigCont blog">РЕАЛИЗУЕМ ЕЩЁ БОЛЕЕ БЕЗОПАСНЫЙ VPN-ПРОТОКОЛ</span><br/>
+      <p class="smallItalic blog">- Новости</p>
+      <hr/>
+  </div>
+
+  <div class="centered blog">
+    <div id="serviceBlog" class="servisesBlock blog">
+       <a id="loadMore" class="servises">Загрузить еще</a>
+       <hr />
+     </div>
   </div>
 
   <a href="contacts.html" class="longBtn"></a>
@@ -53,5 +95,11 @@
     $('.tab').click(function(){
         $('.tab').removeClass('tabActive');
         $(this).addClass('tabActive');
+    });
+
+    $('.blogItem').hover(function(){
+        $(this).find('.bigCont').css('color','#fefefe');
+    },function(){
+        $(this).find('.bigCont').css('color','#212121');
     });
 </script>
