@@ -55,7 +55,8 @@ body{
 
 .centered{
     margin: 0 auto;
-    width: 1170px;
+    max-width: 1170px;
+    width: 86.66%;
 }
 
 .intro{
@@ -85,7 +86,7 @@ body{
 
 .language{
     font-family: robotoMedium;
-    font-size: 10px;
+    font-size: 0.625em;
     line-height: 41px;
     color: #bdbdbd;
     text-decoration: underline;
@@ -188,7 +189,8 @@ body{
 
 .headerContent{
     margin: 0 auto;
-    width: 1170px;
+    width: 86.66%;
+    max-width : 1170px;
     padding-top: 30px;
     text-align: right;
 }
@@ -213,7 +215,7 @@ body{
 
 .headText{
     color : rgb(21,21,21);
-    font-size: 45px;
+    font-size: 2.8125em;
     font-family: robotoBlack;
 }
 
@@ -455,7 +457,7 @@ body{
 
 .servises{
     font-family: robotoRegular;
-    font-size: 14px;
+    font-size: 0.875em;
     color : #e53935;
     transition: 0.6s;
     cursor: pointer;
@@ -632,7 +634,7 @@ body{
 
 .letsWork{
     font-family: robotoRegular;
-    font-size: 14px;
+    font-size: 0.875em;
     color:#fafafa;
     cursor: pointer;
     transition: 0.6s;
@@ -676,9 +678,8 @@ footer .logo{
 
 .addressText{
     font-family: robotoLight;
-    font-size: 13px;
+    font-size: 0.8125em;
     color: #757575;
-    line-height: 21px;
     line-height: 21px;
 }
 
@@ -843,7 +844,7 @@ footer .logo{
     padding-top: 15px;
     padding-bottom: 15px;
     font-family: robotoMedium;
-    font-size: 12px;
+    font-size: 0.75em;
     background: #eeeeee;
     color : #b3b3b3;
     border-radius: 2px;
