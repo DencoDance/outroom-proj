@@ -53,17 +53,6 @@ body{
     padding-top: 20px;
 }
 
-.scroll{
-    font-family: robotoRegular;
-    font-size: 14px;
-    color: #fafafa;
-    line-height: 24px;
-}
-
-.scroll + img{
-    vertical-align: middle;
-}
-
 .centered{
     margin: 0 auto;
     width: 1170px;
