@@ -23,6 +23,11 @@
 }
 
 @font-face {
+    font-family: robotoThin;
+    src : url(font/robotoThin.ttf);
+}
+
+@font-face {
     font-family: robotoRegular;
     src : url(font/robotoRegular.ttf);
 }
@@ -989,4 +994,69 @@ footer .logo{
     padding-top: 12px;
     padding-bottom: 55px;
     padding-left: 0px;
+}
+
+/*B L O G OPEN*/
+
+#blackBlog{
+    height: 380px;
+    width: 100%;
+    max-width: 1920px;
+    background: #212121;
+}
+
+.centered.blackBlog{
+    text-align: left;
+    padding-top: 195px;
+}
+
+#blogText{
+    color: #fefefe;
+    position: absolute;
+    margin-top: 15px;
+}
+
+.line{
+    position: absolute;
+    margin-left: 150px;
+    margin-top: -25px;
+}
+
+.blogName{
+    display: inline-block;
+    padding-left: 260px;
+}
+
+.blogTitle{
+   font-family: robotoThin;
+    color: #fefefe;
+    font-size: 36px;
+}
+
+.centered.date{
+    height: 85px;
+    text-align: center;
+}
+
+.dateText{
+    padding-top: 25px;
+}
+
+.smallItalic.date{
+    color: #d3d3d3;
+    padding-left: 0;
+    padding-bottom: 0;
+}
+
+.smallItalic.date.last{
+  padding-left: 30px;
+}
+
+.centered.textEditor hr{
+    border: 1px solid #e0e0e0;
+    margin-top: 100px;
+}
+
+.socialLinksBlock{
+    height: 140px;
 }
