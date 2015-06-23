@@ -957,7 +957,11 @@ footer .logo{
 }
 
 .blogItem.first hr,.blogItem.next hr{
-    margin-top: 0px;
+    border: 1px solid #e0e0e0 !important;
+}
+
+.blogItem.next hr{
+    margin-top: 1px;
 }
 
 .blogItem.next hr:first-child{
@@ -967,6 +971,7 @@ footer .logo{
 .bigCont.blog{
     color: #212121;
     transition: 0.6s;
+    padding-left: 0px;
 }
 
 .smallItalic.blog{
