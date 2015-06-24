@@ -1172,7 +1172,7 @@ footer .logo{
        font-size: 2em;
    }
 
-   .centered.blackBlog{
+   .centered.blackBlog,.centered._works.light{
        padding-top: 120px;
    }
 
@@ -1198,3 +1198,13 @@ footer .logo{
    }
 }
 
+@media screen and (max-width: 480px) {
+    .titleBox{
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
+    .blogItem{
+        padding-top: 20px;
+    }
+}
