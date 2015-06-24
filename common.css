@@ -1092,19 +1092,19 @@ footer .logo{
 
 .line{
     position: absolute;
-    margin-left: 150px;
-    margin-top: -25px;
+    margin-left: 12.8%;
+    margin-top: -2.1%;
 }
 
 .blogName{
     display: inline-block;
-    padding-left: 260px;
+    padding-left: 26%;
 }
 
 .blogTitle{
    font-family: robotoThin;
     color: #fefefe;
-    font-size: 36px;
+    font-size: 2.25em;
 }
 
 .centered.date{
@@ -1124,6 +1124,12 @@ footer .logo{
 
 .smallItalic.date.last{
   padding-left: 30px;
+}
+
+.centered.blackBlog hr{
+    width : 85px;
+    border : 1px solid #e74c49;
+    display: none;
 }
 
 .centered.textEditor hr{
@@ -1164,6 +1170,31 @@ footer .logo{
 
    .bigCont{
        font-size: 2em;
+   }
+
+   .centered.blackBlog{
+       padding-top: 120px;
+   }
+
+   img.line{
+       display: none;
+   }
+
+   .centered.blackBlog hr{
+     display: block;
+     margin-top: 70px;
+   }
+
+   .blogName{
+       padding-left: 0;
+   }
+
+   #blackBlog{
+       height: 300px;
+   }
+
+   .blogTitle{
+       font-size: 1.5em;
    }
 }
 

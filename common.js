@@ -13,6 +13,7 @@ function mainHeader(){
 
 $(function(){
 //
+    $('mobileMenu').load('mobileMenu.html');
     $('header.mainHeader').load('header.html');
     $('footer').load('footer.html');
     $('.longBtn').load('longBtn.html');
