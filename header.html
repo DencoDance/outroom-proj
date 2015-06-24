@@ -11,7 +11,7 @@
      </nav>
 
      <div class="mobileMenu">
-        <img src="img/menu.png" alt="menu" />
+        <img id="greyMenu" src="img/menu.png" alt="menu" />
      </div>
 
 </div>
@@ -20,6 +20,7 @@
     .hidden{
         display: none !important;
     }
+
 </style>
 
 <script>
@@ -38,20 +39,25 @@
            time += 100;
        });
 
-    });
-
-    $('#menuLight').click(function(){
-        $('.mobileLinksBox').animate({'top':'100%'},350);
-        $('.mobileMenuLinks').stop().animate({'opacity':'0'},350);
         setTimeout(function(){
-            $('.mobileMenuLinks').addClass('hidden');
+            $('#greyMenu').css('opacity','0');
+            $('#menuLightSecond').css('opacity','0');
+            $('#menuLightFirst').css({'transform':'rotate(45deg)','top':'50px'});
+            $('#menuLightThird').css({'transform':'rotate(-45deg)','top':'50px'});
         },500);
+
     });
 
     $('.mobileMenuLinks').click(function(event){
         if (!$(event.target).hasClass('mobileHref')){
             $('.mobileLinksBox').animate({'top':'100%'},350);
             $('.mobileMenuLinks').stop().animate({'opacity':'0'},350);
+
+            $('#greyMenu').css('opacity','1');
+            $('#menuLightSecond').css('opacity','1');
+            $('#menuLightFirst').css({'transform':'rotate(0deg)','top':'42px'});
+            $('#menuLightThird').css({'transform':'rotate(0deg)','top':'58px'});
+
             setTimeout(function(){
                 $('.mobileMenuLinks').addClass('hidden');
             },500);
