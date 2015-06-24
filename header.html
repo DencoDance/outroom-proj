@@ -37,4 +37,14 @@
             $('.mobileMenuLinks').addClass('hidden');
         },500);
     });
+
+    $('.mobileMenuLinks').click(function(event){
+        if (!$(event.target).hasClass('mobileHref')){
+            $('.mobileLinksBox').animate({'top':'100%'},500);
+            $('.mobileMenuLinks').stop().animate({'opacity':'0'},500);
+            setTimeout(function(){
+                $('.mobileMenuLinks').addClass('hidden');
+            },500);
+        }
+    })
 </script>
