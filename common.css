@@ -653,6 +653,10 @@ body{
     padding-bottom: 10px;
 }
 
+.smallItalic.blog{
+    padding-left: 0px;
+}
+
 .smallItalic.more{
     font-size: 0.625em;
     color: #e74c49;
