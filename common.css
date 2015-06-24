@@ -96,7 +96,7 @@ body{
 }
 
 .language.main{
-    padding-right: 14.1%;
+    margin-right: 14.1%;
     line-height: 45px;
 }
 
@@ -116,32 +116,50 @@ body{
     display: none;
 }
 
+#menuLight{
+    position: absolute;
+    right: 6.7%;
+    top: 42px;
+    cursor: pointer;
+}
+
 .mobileMenuLinks{
     font-size: 0.875em;
     font-family: robotoMedium;
-    position: absolute;
+    position: fixed;
     text-align: left;
-    width: 130px;
-    background: #fefefe;
-    box-shadow: 1px 1px 1px #eeeeee;
-    margin-left: -105px;
+    width: 100%;
+    height: 100%;
+    background: #212121;
+    opacity: 0;
+    z-index: 3;
     display: none;
 }
 
-.mobileMenuLinks a {
-    margin: 25px;
-    text-decoration: inherit;
+.mobileLinksBox{
+    position: absolute;
+    top: 100%;
+    margin: 0 auto;
+    right: 0;
+    left: 0;
+    width: 300px;
+    text-align: center;
+}
+
+
+.mobileLinksBox a {
     display: block;
-    color : rgb(21,21,21);
+    cursor: pointer;
     transition: 0.6s;
+    text-decoration: inherit;
+    color: #fafafa;
+    margin: 10px;
+    font-family: robotoMedium;
+    font-size: 30px;
 }
 
-.mobileMenuLinks a:visited{
-    color : rgb(21,21,21);
-}
-
-.mobileMenuLinks a:hover{
-    color : #e74c49;
+.mobileLinksBox a:visited{
+    color: #fafafa;
 }
 
 .headerLinks{
@@ -978,7 +996,7 @@ footer .logo{
     background: #fefefe;
     transition: 0.6s;
     cursor: pointer;
-    border-bottom: 2px solid #eeeeee;
+    border-bottom: 1px solid #eeeeee;
 
 }
 
@@ -997,7 +1015,7 @@ footer .logo{
 }
 
 .blogItem.first{
-    border-top: 2px solid #eeeeee;
+    border-top: 1px solid #eeeeee;
 }
 
 .bigCont.blog{

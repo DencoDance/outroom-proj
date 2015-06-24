@@ -12,19 +12,29 @@
 
      <div class="mobileMenu">
         <img src="img/menu.png" alt="menu" />
-        <nav class="mobileMenuLinks">
-            <a href="index.html">ГЛАВНАЯ</a>
-            <a href="servises.html">УСЛУГИ</a>
-            <a href="work.html">ПОРТФОЛИО</a>
-            <a href="blog.html">БЛОГ</a>
-            <a href="contacts.html">КОНТАКТЫ</a>
-        </nav>
      </div>
 
 </div>
 
+<style>
+    .hidden{
+        display: none !important;
+    }
+</style>
+
 <script>
     $('.mobileMenu').click(function(){
-        $('.mobileMenuLinks').slideToggle();
+       $('.mobileLinksBox').animate({'top':'20%'},500);
+       $('.mobileMenuLinks')
+               .removeClass('hidden').css('display','block')
+               .stop().animate({'opacity':'0.96'},500);
+    });
+
+    $('#menuLight').click(function(){
+        $('.mobileLinksBox').animate({'top':'100%'},500);
+        $('.mobileMenuLinks').stop().animate({'opacity':'0'},500);
+        setTimeout(function(){
+            $('.mobileMenuLinks').addClass('hidden');
+        },500);
     });
 </script>

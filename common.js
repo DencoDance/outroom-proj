@@ -4,7 +4,7 @@ function mainHeader(){
     if( $(window).scrollTop() >= scrollPosition &&
         $(window).scrollTop() >= 3*$('.mainHeader').height()
     ){
-        $('.mainHeader,.mobileMenuLinks').stop().slideUp(150);
+        $('.mainHeader').stop().slideUp(150);
     }else{
         $('.mainHeader').stop().slideDown(150);
     }
