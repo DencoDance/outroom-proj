@@ -11,7 +11,9 @@
      </nav>
 
      <div class="mobileMenu">
-        <img id="greyMenu" src="img/menu.png" alt="menu" />
+         <img id="menuBlackFirst" src="img/lineBlackTransp.png" alt="menu" />
+         <img id="menuBlackSecond" src="img/lineBlackTransp.png" alt="menu" />
+         <img id="menuBlackThird" src="img/lineBlackTransp.png" alt="menu" />
      </div>
 
 </div>
@@ -39,10 +41,13 @@
            time += 100;
        });
 
-            $('#greyMenu').css('opacity','0');
-            $('#menuLightSecond').css('opacity','0');
-            $('#menuLightFirst').css({'transform':'rotate(45deg)','top':'50px'});
-            $('#menuLightThird').css({'transform':'rotate(-45deg)','top':'50px'});
+       $('#menuLightSecond,#menuBlackFirst,#menuBlackThird').css('opacity','0');
+
+       $('#menuBlackFirst').css({'transform':'rotate(45deg)','top':'48px'});
+       $('#menuBlackThird').css({'transform':'rotate(-45deg)','top':'48px'});
+
+       $('#menuLightFirst').css({'transform':'rotate(45deg)','top':'50px'});
+       $('#menuLightThird').css({'transform':'rotate(-45deg)','top':'50px'});
 
     });
 
@@ -51,10 +56,10 @@
             $('.mobileLinksBox').animate({'top':'100%'},350);
             $('.mobileMenuLinks').stop().animate({'opacity':'0'},350);
 
-            $('#greyMenu').css('opacity','1');
-            $('#menuLightSecond').css('opacity','1');
-            $('#menuLightFirst').css({'transform':'rotate(0deg)','top':'42px'});
-            $('#menuLightThird').css({'transform':'rotate(0deg)','top':'58px'});
+            $('#menuLightSecond,#menuBlackFirst,#menuBlackThird').css('opacity','1');
+
+            $('#menuBlackFirst,#menuLightFirst').css({'transform':'rotate(0deg)','top':'42px'});
+            $('#menuBlackThird,#menuLightThird').css({'transform':'rotate(0deg)','top':'58px'});
 
             setTimeout(function(){
                 $('.mobileMenuLinks').addClass('hidden');

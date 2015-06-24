@@ -124,6 +124,14 @@ body{
     transition: 0.5s;
 }
 
+#menuBlackFirst{
+    position: absolute;
+    right: 6.7%;
+    top: 42px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
 #menuLightSecond{
     position: absolute;
     right: 6.7%;
@@ -132,7 +140,23 @@ body{
     transition: 0.5s;
 }
 
+#menuBlackSecond{
+    position: absolute;
+    right: 6.7%;
+    top: 50px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
 #menuLightThird{
+    position: absolute;
+    right: 6.7%;
+    top: 58px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#menuBlackThird{
     position: absolute;
     right: 6.7%;
     top: 58px;
