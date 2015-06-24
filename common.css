@@ -1236,6 +1236,10 @@ footer .logo{
         height: 290px;
     }
 
+    #blackBlog{
+        height: 350px;
+    }
+
     .footerContent{
         float: none;
         text-align: center;
