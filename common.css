@@ -626,7 +626,7 @@ body{
 
 .bigCont{
     font-family: robotoBold;
-    font-size: 36px;
+    font-size: 2.25em;
     color : #fafafa;
     padding-left: 40px;
     line-height: 38px;
@@ -657,13 +657,13 @@ body{
 .smallItalic{
     font-family: robooItalic;
     color : #fafafa;
-    font-size: 14px;
+    font-size: 0.875em;
     padding-left: 40px;
     padding-bottom: 10px;
 }
 
 .smallItalic.more{
-    font-size: 10px;
+    font-size: 0.625em;
     color: #e74c49;
     cursor : pointer;
     transition: 0.5s;
@@ -1006,6 +1006,15 @@ footer .logo{
 
 .blogItem.next hr:first-child{
     opacity: 0;
+}
+
+@media screen and (max-width: 860px) {
+    .blogItem.next hr:first-child{
+        opacity: 1;
+    }
+    .blogItem.next.last hr:last-child{
+        opacity: 0;
+    }
 }
 
 .bigCont.blog{
