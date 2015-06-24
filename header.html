@@ -24,15 +24,24 @@
 
 <script>
     $('.mobileMenu').click(function(){
-       $('.mobileLinksBox').animate({'top':'20%'},500);
-       $('.mobileMenuLinks')
-               .removeClass('hidden').css('display','block')
-               .stop().animate({'opacity':'0.96'},500);
+        $('.mobileMenuLinks')
+                .removeClass('hidden').css('display','block')
+                .stop().animate({'opacity':'0.96'},500);
+
+        var start = 20;
+        var time = 450;
+
+       $('.mobileLinksBox').each(function() {
+           $(this).animate({'top': start + '%'}, time);
+           start += 10;
+           time += 150;
+       });
+
     });
 
     $('#menuLight').click(function(){
-        $('.mobileLinksBox').animate({'top':'100%'},500);
-        $('.mobileMenuLinks').stop().animate({'opacity':'0'},500);
+        $('.mobileLinksBox').animate({'top':'100%'},350);
+        $('.mobileMenuLinks').stop().animate({'opacity':'0'},350);
         setTimeout(function(){
             $('.mobileMenuLinks').addClass('hidden');
         },500);
@@ -40,8 +49,8 @@
 
     $('.mobileMenuLinks').click(function(event){
         if (!$(event.target).hasClass('mobileHref')){
-            $('.mobileLinksBox').animate({'top':'100%'},500);
-            $('.mobileMenuLinks').stop().animate({'opacity':'0'},500);
+            $('.mobileLinksBox').animate({'top':'100%'},350);
+            $('.mobileMenuLinks').stop().animate({'opacity':'0'},350);
             setTimeout(function(){
                 $('.mobileMenuLinks').addClass('hidden');
             },500);
