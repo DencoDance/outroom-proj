@@ -24,17 +24,18 @@
 
 <script>
     $('.mobileMenu').click(function(){
+        $('.mobileLinksBox').css('opacity','0');
         $('.mobileMenuLinks')
                 .removeClass('hidden').css('display','block')
                 .stop().animate({'opacity':'0.96'},500);
 
         var start = 20;
-        var time = 450;
+        var time = 320;
 
        $('.mobileLinksBox').each(function() {
-           $(this).animate({'top': start + '%'}, time);
-           start += 10;
-           time += 150;
+           $(this).animate({'opacity':'1','top': start + '%'}, time);
+           start += 13;
+           time += 100;
        });
 
     });
