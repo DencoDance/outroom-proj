@@ -1207,4 +1207,13 @@ footer .logo{
     .blogItem{
         padding-top: 20px;
     }
+
+    .tabs{
+        width: 230px;
+        text-align: left;
+    }
+
+    .tab{
+        margin-bottom: 20px;
+    }
 }
