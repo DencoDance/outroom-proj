@@ -203,6 +203,10 @@ body{
     color: #fafafa;
 }
 
+.mobileLinksBox a:hover {
+    color: #e74c49;
+}
+
 .headerLinks{
     float: right;
     color: #fafafa;

@@ -214,13 +214,4 @@
                     .addClass('hidden');
         }
     });
-
-    $(function(){
-        $(window).resize(function(){
-            $('.overlayImgTab').each(function(){
-                $(this).offset({'left':$(this).closest('img').offset().left,'top':$(this).closest('img').offset().top});
-                $(this).css('width',$(this).closest('img').css('width'));
-            });
-        });
-    });
 </script>
