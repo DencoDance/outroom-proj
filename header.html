@@ -53,19 +53,17 @@
 
     $(function(){
         $('.mobileMenuLinks').click(function(event){
-            if (!$(event.target).hasClass('mobileHref')){
-                $('.mobileLinksBox').animate({'top':'100%'},350);
-                $('.mobileMenuLinks').stop().animate({'opacity':'0'},350);
+             $('.mobileLinksBox').animate({'top':'100%'},350);
+             $('.mobileMenuLinks').stop().animate({'opacity':'0'},350);
 
-                $('#menuLightSecond,#menuBlackFirst,#menuBlackSecond,#menuBlackThird').css('opacity','1');
+             $('#menuLightSecond,#menuBlackFirst,#menuBlackSecond,#menuBlackThird').css('opacity','1');
 
-                $('#menuBlackFirst,#menuLightFirst').css({'transform':'rotate(0deg)','top':'42px'});
-                $('#menuBlackThird,#menuLightThird').css({'transform':'rotate(0deg)','top':'58px'});
+             $('#menuBlackFirst,#menuLightFirst').css({'transform':'rotate(0deg)','top':'42px'});
+             $('#menuBlackThird,#menuLightThird').css({'transform':'rotate(0deg)','top':'58px'});
 
-                setTimeout(function(){
-                    $('.mobileMenuLinks').addClass('hidden');
-                },500);
-            }
+            setTimeout(function(){
+                 $('.mobileMenuLinks').addClass('hidden');
+             },500);
         });
     });
 </script>
