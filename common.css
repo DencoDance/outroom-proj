@@ -1147,15 +1147,28 @@ footer .logo{
     .logoImg{
         float: left;
         clear: both;
-        padding-top: 0px;
+        padding-top: 85px;
+        padding-bottom: 30px;
     }
 
     .workExample{
         padding-top: 0px;
+        float: none;
+        margin-left: 0;
+    }
+
+    .workBlock{
+        padding-top: 10px;
     }
 
     .workTextTitle,.workTextCaps,.smallText{
-        float : right;
+        float : left;
+        padding-top: 18px;
+        padding-left: 40px;
+    }
+
+    .centered:first-child{
+        text-align: center;
     }
 }
 
@@ -1163,14 +1176,40 @@ footer .logo{
     .mobileMenu{
         display: inherit;
     }
+
     .headerLinks.dark{
         display:none;
+    }
+}
+
+@media screen and (max-width: 880px) {
+    .logoImg{
+        float: none;
+        margin-left: 0px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+
+    .workTextTitle, .workTextCaps, .smallText {
+        float: none;
+    }
+
+    .workBlock{
+        padding-top: 10px;
+    }
+
+    .workExample{
+        height: 570px;
     }
 }
 
 @media screen and (max-width: 768px) {
    .headText{
        float: left;
+   }
+
+   .centered:first-child{
+        text-align: center;
    }
 
    .headText + hr{
@@ -1180,10 +1219,12 @@ footer .logo{
 
     .workTextTitle, .workTextCaps, .smallText {
         float: left;
+        padding-left: 0px;
     }
 
    .workExample{
-       height: 420px;
+       float : none;
+       height: 450px;
        margin: 0;
    }
 
@@ -1232,15 +1273,22 @@ footer .logo{
         float: none;
         margin-left: 0px;
     }
+}
 
-    .workBlock{
-        padding-top: 30px;
+@media screen and (max-width: 620px) {
+    .workExample{
+        height: 400px;
+        float : none;
     }
 }
 
 @media screen and (max-width: 480px) {
     .headText{
         text-align: left;
+    }
+
+    .centered:first-child{
+        text-align: center;
     }
 
     .blockWork{
@@ -1262,8 +1310,13 @@ footer .logo{
         margin-right: 0;
     }
 
+    .workTextTitle, .workTextCaps, .smallText {
+        float: none;
+        padding-left: 0px;
+    }
+
     .workExample{
-        height: 270px;
+        height: 260px;
         margin: 0px;
     }
 
