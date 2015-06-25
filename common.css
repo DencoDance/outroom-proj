@@ -449,14 +449,14 @@ body{
 .workTextTitle{
     font-family: robotoBlack;
     color : #fafafa;
-    font-size: 48px;
+    font-size: 3em;
     float: left;
 }
 
 .workTextCaps{
     font-family: robotoMedium;
     color : #fafafa;
-    font-size: 14px;
+    font-size: 0.875em;
     float : left;
     margin-bottom: 40px;
 }
@@ -1143,6 +1143,22 @@ footer .logo{
 }
 
 /* M E D I A*/
+@media screen and (max-width: 1320px) {
+    .logoImg{
+        float: left;
+        clear: both;
+        padding-top: 0px;
+    }
+
+    .workExample{
+        padding-top: 0px;
+    }
+
+    .workTextTitle,.workTextCaps,.smallText{
+        float : right;
+    }
+}
+
 @media screen and (max-width: 1010px) {
     .mobileMenu{
         display: inherit;
@@ -1156,9 +1172,19 @@ footer .logo{
    .headText{
        float: left;
    }
+
    .headText + hr{
        float: left;
        clear: both;
+   }
+
+    .workTextTitle, .workTextCaps, .smallText {
+        float: left;
+    }
+
+   .workExample{
+       height: 420px;
+       margin: 0;
    }
 
     .ourWorks.light{
@@ -1201,11 +1227,44 @@ footer .logo{
    .blogTitle{
        font-size: 1.5em;
    }
+
+    .logoImg{
+        float: none;
+        margin-left: 0px;
+    }
+
+    .workBlock{
+        padding-top: 30px;
+    }
 }
 
 @media screen and (max-width: 480px) {
     .headText{
         text-align: left;
+    }
+
+    .blockWork{
+        height: 1060px !important;
+    }
+
+    .worksImg{
+        height: 820px;
+    }
+
+    .workTextTitle{
+        font-size: 2.5em;
+    }
+
+    .worksImg + .centered{
+        text-align: center;
+        float : none;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .workExample{
+        height: 270px;
+        margin: 0px;
     }
 
     .ourWorks.light{
