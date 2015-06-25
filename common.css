@@ -1167,9 +1167,10 @@ footer .logo{
         padding-left: 40px;
     }
 
-    .centered:first-child{
+    .centered.works{
         text-align: center;
     }
+
 }
 
 @media screen and (max-width: 1010px) {
@@ -1213,7 +1214,7 @@ footer .logo{
         padding-top: 160px;
     }
 
-   .centered:first-child{
+   .centered.works{
         text-align: center;
    }
 
@@ -1300,7 +1301,7 @@ footer .logo{
         text-align: left;
     }
 
-    .centered:first-child{
+    .centered.works{
         text-align: center;
     }
 
