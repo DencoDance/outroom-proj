@@ -1161,6 +1161,10 @@ footer .logo{
        clear: both;
    }
 
+    .ourWorks.light{
+        height: 220px;
+    }
+
    .blogBlock{
        padding-top: 120px;
    }
@@ -1200,6 +1204,14 @@ footer .logo{
 }
 
 @media screen and (max-width: 480px) {
+    .headText{
+        text-align: left;
+    }
+
+    .ourWorks.light{
+        height: 270px;
+    }
+
     .titleBox{
         padding-top: 12px;
         padding-bottom: 12px;
