@@ -1152,7 +1152,7 @@ footer .logo{
     }
 
     .workExample{
-        padding-top: 0px;
+        padding-top: 40px;
         float: none;
         margin-left: 0;
     }
@@ -1169,6 +1169,11 @@ footer .logo{
 
     .centered.works{
         text-align: center;
+    }
+
+    .workTabs{
+        height: auto;
+        padding-bottom: 100px;
     }
 
 }
@@ -1200,7 +1205,7 @@ footer .logo{
     }
 
     .workExample{
-        height: 570px;
+        height: 500px;
     }
 }
 
@@ -1291,14 +1296,19 @@ footer .logo{
 
 @media screen and (max-width: 620px) {
     .workExample{
-        height: 400px;
+        height: 380px;
         float : none;
+        padding-top: 20px;
     }
 }
 
 @media screen and (max-width: 480px) {
     .headText{
         text-align: left;
+    }
+
+    .oneLineImg{
+        width: 280px;
     }
 
     .centered.works{

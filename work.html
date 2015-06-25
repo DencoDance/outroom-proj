@@ -178,13 +178,6 @@
        $(this).css('width',$(this).next('img').css('width'));
     });
 
-    $(window).resize(function(){
-        $('.overlayImgTab').each(function(){
-            $(this).offset({'left':$(this).next('img').offset().left,'top':$(this).next('img').offset().top});
-            $(this).css('width',$(this).next('img').css('width'));
-        });
-    });
-
     var marginTopStart = $('.overlayImgTab:first').css('margin-top');
     var marginTopFinish = $('.oneLineImg:first').height();
     $('.overlayImgTab').css('margin-top',marginTopFinish);
@@ -220,5 +213,14 @@
             $('.overlayImgTab').stop().animate({'height':'0','margin-top':marginTopFinish},350)
                     .addClass('hidden');
         }
+    });
+
+    $(function(){
+        $(window).resize(function(){
+            $('.overlayImgTab').each(function(){
+                $(this).offset({'left':$(this).closest('img').offset().left,'top':$(this).closest('img').offset().top});
+                $(this).css('width',$(this).closest('img').css('width'));
+            });
+        });
     });
 </script>
