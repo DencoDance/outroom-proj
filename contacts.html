@@ -2,6 +2,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
+    <meta name=viewport content="width=device-width, initial-scale=1">
     <title>Контакты</title>
     <link rel="shortcut icon" type="image/png" href="img/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="common.css">
@@ -9,6 +10,9 @@
     <script src="common.js"></script>
 </head>
   <body>
+
+  <mobileMenu></mobileMenu>
+
    <div class="blockContacts">
      <header class="mainHeader"></header>
      <div class="ourWorks light">
@@ -60,10 +64,10 @@
 
      <div class="publicLinks">
         <div  class="links centered">
-           <a class="publicLinkImg"><img src="img/public1.png"  alt="public link" /></a>
-           <a class="publicLinkImg"><img src="img/public2.png"  alt="public link" /></a>
-           <a class="publicLinkImg"><img src="img/public3.png"  alt="public link" /></a>
-           <a class="publicLinkImg"><img src="img/public4.png"  alt="public link" /></a>
+           <a id="firstLink" class="publicLinkImg"><img src="img/public1.png"  alt="public link" /></a>
+           <a id="secondLink" class="publicLinkImg"><img src="img/public2.png"  alt="public link" /></a>
+           <a id="thirdLink" class="publicLinkImg"><img src="img/public3.png"  alt="public link" /></a>
+           <a id="lastLink" class="publicLinkImg"><img src="img/public4.png"  alt="public link" /></a>
         </div>
      </div>
 
@@ -103,20 +107,20 @@
     .centered.contacts .smallInp{
         outline: none;
         border: none;
-        width: 305px;
+        width: 26.068%;
         padding-right: 60px;
-        padding-left: 15px;
+        padding-left: 1.28%;
         height: 50px;
         display: inline;
         font-family: robotoRegular;
-        font-size : 14px;
+        font-size : 0.875em;
         color : #212121;
     }
 
     .select{
         height: 50px;
         padding-left: 15px;
-        width: 562px;
+        width: 48.03%;
         display: inline;
         font-family: robotoRegular;
         font-size : 14px;
@@ -128,7 +132,7 @@
         background:#fefefe no-repeat;
         background-image: url('img/down.png');
         background-position-y: 24px;
-        background-position-x: 546px;
+        background-position-x: 96%;
     }
 
     .rotate{
@@ -141,18 +145,12 @@
 
     #name{
         float: left;
-        background:#fefefe no-repeat;
-        background-image: url('img/important.png');
-        background-position-y: 15px;
-        background-position-x: 340px;
+        background:#fefefe;
     }
 
     #email{
         margin-left: 15px;
-        background:#fefefe no-repeat;
-        background-image: url('img/important.png');
-        background-position-y: 15px;
-        background-position-x: 340px;
+        background:#fefefe;
     }
 
     #phone{
@@ -169,16 +167,13 @@
         font-family: robotoRegular;
         font-size : 14px;
         color : #212121;
-        width: 1095px;
+        width: 93.55%;
         padding-right: 60px;
         padding-left: 15px;
         padding-top: 15px;
         height: 120px;
         outline: none;
-        background:#fefefe no-repeat;
-        background-image: url('img/important.png');
-        background-position-y: 55px;
-        background-position-x: 1129px;
+        background:#fefefe;
     }
 
     .blackBtn{
@@ -207,6 +202,17 @@
         opacity: 0;
     }
 
+    #name::-webkit-input-placeholder:after,
+    #email::-webkit-input-placeholder:after,
+    #message::-webkit-input-placeholder:after{
+        content: ' * ';
+        font-size: 24px;
+        font-family: robotoMedium;
+        position: absolute;
+        color: #e53935;
+        margin-top: -10px;
+    }
+
     .serv{
         display: none;
         position: absolute;
@@ -223,6 +229,62 @@
 
     .blockPrice,.blockServ{
         display: inline;
+    }
+
+    @media screen and (max-width: 1350px){
+        #name{
+            width: 93.35%;
+        }
+
+        #email{
+            float:left;
+            margin-top: 15px;
+            margin-left: 0px;
+            width : 27.6%;
+        }
+
+        #phone{
+            margin-top: 15px;
+            width : 27.6%;
+            float : right;
+        }
+    }
+
+    @media screen and (max-width: 768px){
+       #name,#email,#phone,#message,.select,.select.multi{
+           display: block;
+           width : 95%;
+           margin-left: 0;
+           float : none;
+           padding-right: 0px;
+           padding-left: 15px;
+       }
+
+        .centered.contacts{
+            padding-top: 45px;
+            text-align: center;
+        }
+
+        .redBlock{
+            height: 630px;
+        }
+
+        .blackBtn{
+            float : none;
+        }
+    }
+
+    @media screen and (max-width: 440px){
+        #thirdLink{
+            float: left;
+            clear: both;
+            padding-left: 0;
+        }
+
+        #lastLink{
+            float: left;
+            margin-left: 50px;
+        }
     }
 
 </style>

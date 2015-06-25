@@ -26,6 +26,8 @@
 </style>
 
 <script>
+    var flag = false;
+    
     $('.mobileMenu').click(function(){
         $('.mobileLinksBox').css('opacity','0');
         $('.mobileMenuLinks')
@@ -49,21 +51,27 @@
        $('#menuLightFirst').css({'transform':'rotate(45deg)','top':'50px'});
        $('#menuLightThird').css({'transform':'rotate(-45deg)','top':'50px'});
 
+        setTimeout(function(){
+            flag = true;
+        },250);
+
+       $(window).click(function(event){
+           if (flag){
+               $('.mobileLinksBox').animate({'top':'100%'},350);
+               $('.mobileMenuLinks').stop().animate({'opacity':'0'},350);
+
+               $('#menuLightSecond,#menuBlackFirst,#menuBlackSecond,#menuBlackThird').css('opacity','1');
+
+               $('#menuBlackFirst,#menuLightFirst').css({'transform':'rotate(0deg)','top':'42px'});
+               $('#menuBlackThird,#menuLightThird').css({'transform':'rotate(0deg)','top':'58px'});
+
+               flag = false;
+
+               setTimeout(function(){
+                   $('.mobileMenuLinks').addClass('hidden');
+               },500);
+           }
+       });
     });
 
-    $(function(){
-        $('.mobileMenuLinks').click(function(event){
-             $('.mobileLinksBox').animate({'top':'100%'},350);
-             $('.mobileMenuLinks').stop().animate({'opacity':'0'},350);
-
-             $('#menuLightSecond,#menuBlackFirst,#menuBlackSecond,#menuBlackThird').css('opacity','1');
-
-             $('#menuBlackFirst,#menuLightFirst').css({'transform':'rotate(0deg)','top':'42px'});
-             $('#menuBlackThird,#menuLightThird').css({'transform':'rotate(0deg)','top':'58px'});
-
-            setTimeout(function(){
-                 $('.mobileMenuLinks').addClass('hidden');
-             },500);
-        });
-    });
 </script>
