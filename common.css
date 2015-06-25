@@ -1206,7 +1206,12 @@ footer .logo{
 @media screen and (max-width: 768px) {
    .headText{
        float: left;
+       text-align: left;
    }
+
+    .tabs.work{
+        padding-top: 160px;
+    }
 
    .centered:first-child{
         text-align: center;
@@ -1273,6 +1278,14 @@ footer .logo{
         float: none;
         margin-left: 0px;
     }
+
+    .blockWork{
+        height: 1210px !important;
+    }
+
+    .centered.worksTab{
+        padding-top: 0px;
+    }
 }
 
 @media screen and (max-width: 620px) {
@@ -1289,6 +1302,10 @@ footer .logo{
 
     .centered:first-child{
         text-align: center;
+    }
+
+    .centered.worksTab{
+        padding-top: 50px;
     }
 
     .blockWork{
@@ -1372,5 +1389,11 @@ footer .logo{
 
     .smallIcon{
         margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .tabs.work{
+        padding-top: 200px;
     }
 }
