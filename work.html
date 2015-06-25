@@ -174,8 +174,9 @@
     });
 
     $('.overlayImgTab').each(function(){
+        var width = parseFloat($(this).next('img').css('width'));
        $(this).offset({'left':$(this).next('img').offset().left,'top':$(this).next('img').offset().top});
-       $(this).css('width',$(this).next('img').css('width'));
+       $(this).css('width',width - 25 + 'px');
     });
 
     var marginTopStart = $('.overlayImgTab:first').css('margin-top');
