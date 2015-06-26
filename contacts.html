@@ -153,7 +153,8 @@
     }
 
     #phone{
-        float: right;
+        float: none;
+        margin-left: 10px;
     }
 
     .centered.contacts textarea{
@@ -166,7 +167,7 @@
         font-family: robotoRegular;
         font-size : 14px;
         color : #212121;
-        width: 98.55%;
+        width: 98.48%;
         padding-left: 15px;
         padding-top: 15px;
         height: 120px;
@@ -241,7 +242,7 @@
         #email{
             float:left;
             margin-top: 15px;
-            margin-left: 0px;
+            margin-left: 0;
             width : 48.2%;
         }
 
@@ -249,6 +250,12 @@
             margin-top: 15px;
             width : 48.2%;
             float : right;
+        }
+    }
+
+    @media screen and (max-width: 1130px){
+        #phone{
+            margin-left: 5px;
         }
     }
 
@@ -374,37 +381,79 @@
         });
 
         $('.blackBtn').click(function(){
-            if( $('#name').val().length < 2 || $('#name').val().length > 40 ){
-                $('#name')
-                        .animate({'margin-top': '-10px'},100)
-                        .animate({'margin-top': '0px'},300);
-            }
-            else if( ($('#email').val().length < 5 || $('#email').val().length > 30) || !( validEml.test($('#email').val()) ) ){
-                $('#email')
-                        .animate({'margin-top': '-10px'},100)
-                        .animate({'margin-top': '0px'},300);
+            if ($(window).width() >= 1348) {
+                if ($('#name').val().length < 2 || $('#name').val().length > 40) {
+                    var marginStart = parseFloat($('#name').css('margin-top'));
+                    var delta = marginStart - 10;
+                    $('#name')
+                            .animate({'margin-top': '-10px'}, 100)
+                            .animate({'margin-top': '0px'}, 300);
+                }
+                else if (($('#email').val().length < 5 || $('#email').val().length > 30) || !( validEml.test($('#email').val()) )) {
+                    $('#email')
+                            .animate({'margin-top': '-10px'}, 100)
+                            .animate({'margin-top': '0px'}, 300);
 
-            }
-            else if( !( /^[0-9]/.test( + $('#phone').val())) ) {
-                $('#phone')
-                        .animate({'margin-top': '-10px'},100)
-                        .animate({'margin-top': '0px'},300);
-            }
-            else if( $('#message').val().length < 2 || $('#message').val().length > 400 ){
-                $('#message')
-                        .animate({'margin-left':'-10px'},150)
-                        .animate({'margin-left':'10px'},150)
-                        .animate({'margin-left':'0px'},200);
-            }else{
-                var person = {
-                    '1.Name': $('#name').val(),
-                    '2.Email': $('#email').val(),
-                    '3.Phone': $('#phone').val(),
-                    '4.Message': $('#message').val(),
-                    '5.Price' : $('.select:first').val(),
-                    '6.Service' : service
+                }
+                else if (!( /^[0-9]/.test(+$('#phone').val()))) {
+                    $('#phone')
+                            .animate({'margin-top': '-10px'}, 100)
+                            .animate({'margin-top': '0px'}, 300);
+                }
+                else if ($('#message').val().length < 2 || $('#message').val().length > 400) {
+                    $('#message')
+                            .animate({'margin-left': '-10px'}, 150)
+                            .animate({'margin-left': '10px'}, 150)
+                            .animate({'margin-left': '0px'}, 200);
+                } else {
+                    var person = {
+                        '1.Name': $('#name').val(),
+                        '2.Email': $('#email').val(),
+                        '3.Phone': $('#phone').val(),
+                        '4.Message': $('#message').val(),
+                        '5.Price': $('.select:first').val(),
+                        '6.Service': service
 
-                };
+                    };
+                }
+            }else if($(window).width() <= 960){
+                if ($('#name').val().length < 2 || $('#name').val().length > 40) {
+                    var marginStart = parseFloat($('#name').css('margin-top'));
+                    var delta = marginStart - 10;
+                    $('#name')
+                            .animate({'margin-left': '-10px'}, 150)
+                            .animate({'margin-left': '10px'}, 150)
+                            .animate({'margin-left': '0px'}, 200);
+                }
+                else if (($('#email').val().length < 5 || $('#email').val().length > 30) || !( validEml.test($('#email').val()) )) {
+                    $('#email')
+                            .animate({'margin-left': '-10px'}, 150)
+                            .animate({'margin-left': '10px'}, 150)
+                            .animate({'margin-left': '0px'}, 200);
+
+                }
+                else if (!( /^[0-9]/.test(+$('#phone').val()))) {
+                    $('#phone')
+                            .animate({'margin-left': '-10px'}, 150)
+                            .animate({'margin-left': '10px'}, 150)
+                            .animate({'margin-left': '0px'}, 200);
+                }
+                else if ($('#message').val().length < 2 || $('#message').val().length > 400) {
+                    $('#message')
+                            .animate({'margin-left': '-10px'}, 150)
+                            .animate({'margin-left': '10px'}, 150)
+                            .animate({'margin-left': '0px'}, 200);
+                } else {
+                    var person = {
+                        '1.Name': $('#name').val(),
+                        '2.Email': $('#email').val(),
+                        '3.Phone': $('#phone').val(),
+                        '4.Message': $('#message').val(),
+                        '5.Price': $('.select:first').val(),
+                        '6.Service': service
+
+                    };
+                }
             }
         });
     });
