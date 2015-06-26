@@ -433,7 +433,7 @@
         });
 
         $('label').each(function(){
-            $(this).offset({'left':$(this).next().offset().left + 15,'top':$(this).next().offset().top});
+            $(this).css({'left':$(this).next().offset().left + 15,'top':$(this).next().offset().top});
         });
 
         $('.price').offset({'left':$('.select.single').offset().left,'top':$('.select.single').offset().top + $('.select.single').height() - 3});
