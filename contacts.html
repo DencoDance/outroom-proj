@@ -99,6 +99,7 @@
     label{
         position: absolute;
         font-size: 13px;
+        font-family: robotoRegular;
         margin-top: 20px;
         opacity:0;
         transition: 0.4s;
@@ -413,8 +414,8 @@
                 });
                 print = service = service.substring(0,service.length - 2);
 
-                if ( print.length > 70 ){
-                    print = service.substr(0,65) + '...'
+                if ( print.length > 60 ){
+                    print = service.substr(0,60) + '...'
                 }
                 $('.select.multi').val('').val(print);
             }else{
@@ -443,7 +444,7 @@
 
         $(window).resize(function(){
            var int = setTimeout(function(){
-
+S
                 $('label').each(function(){
                     $(this).css({'left':$(this).next().offset().left + 15,'top':$(this).next().offset().top});
                 });
@@ -491,28 +492,28 @@
             }
         });
 
-//        $('.blackBtn').on('click',function(){
-//            if ($('#name').val().length < 2 || $('#name').val().length > 40) {
-//
-//            }
-//            else if (($('#email').val().length < 5 || $('#email').val().length > 30) || !( validEml.test($('#email').val()) )) {
-//
-//            }
-//            else if (!( /^[0-9]/.test(+$('#phone').val()))) {
-//
-//            }
-//            else if ($('#message').val().length < 2 || $('#message').val().length > 400) {
-//
-//            } else {
-//                var person = {
-//                    '1.Name': $('#name').val(),
-//                    '2.Email': $('#email').val(),
-//                    '3.Phone': $('#phone').val(),
-//                    '4.Message': $('#message').val(),
-//                    '5.Price': $('.select.single').val(),
-//                    '6.Service': service
-//                };
-//            }
-//        });
+        $('.blackBtn').on('click',function(){
+            if ($('#name').val().length < 2 || $('#name').val().length > 40) {
+                $('#forName').css({'opacity':'1','margin-top':'35px'});
+            }
+            else if (($('#email').val().length < 5 || $('#email').val().length > 30) || !( validEml.test($('#email').val()) )) {
+                $('#forEmail').css({'opacity':'1','margin-top':'35px'});
+            }
+            else if (!( /^[0-9]/.test(+$('#phone').val()))) {
+                $('#forPhone').css({'opacity':'1','margin-top':'35px'});
+            }
+            else if ($('#message').val().length < 2 || $('#message').val().length > 400) {
+                $('#forMessage').css({'opacity':'1','margin-top':'47px'});
+            } else {
+                var person = {
+                    '1.Name': $('#name').val(),
+                    '2.Email': $('#email').val(),
+                    '3.Phone': $('#phone').val(),
+                    '4.Message': $('#message').val(),
+                    '5.Price': $('.select.single').val(),
+                    '6.Service': service
+                };
+            }
+        });
     });
 </script>
