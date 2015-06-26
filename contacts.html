@@ -387,24 +387,28 @@
                     var delta = marginStart - 10;
                     $('#name')
                             .animate({'margin-top': '-10px'}, 100)
-                            .animate({'margin-top': '0px'}, 300);
+                            .animate({'margin-top': '0px'}, 300)
+                            .focus();
                 }
                 else if (($('#email').val().length < 5 || $('#email').val().length > 30) || !( validEml.test($('#email').val()) )) {
                     $('#email')
                             .animate({'margin-top': '-10px'}, 100)
-                            .animate({'margin-top': '0px'}, 300);
+                            .animate({'margin-top': '0px'}, 300)
+                            .focus();
 
                 }
                 else if (!( /^[0-9]/.test(+$('#phone').val()))) {
                     $('#phone')
                             .animate({'margin-top': '-10px'}, 100)
-                            .animate({'margin-top': '0px'}, 300);
+                            .animate({'margin-top': '0px'}, 300)
+                            .focus();
                 }
                 else if ($('#message').val().length < 2 || $('#message').val().length > 400) {
                     $('#message')
                             .animate({'margin-left': '-10px'}, 150)
                             .animate({'margin-left': '10px'}, 150)
-                            .animate({'margin-left': '0px'}, 200);
+                            .animate({'margin-left': '0px'}, 200)
+                            .focus();
                 } else {
                     var person = {
                         '1.Name': $('#name').val(),
@@ -423,26 +427,30 @@
                     $('#name')
                             .animate({'margin-left': '-10px'}, 150)
                             .animate({'margin-left': '10px'}, 150)
-                            .animate({'margin-left': '0px'}, 200);
+                            .animate({'margin-left': '0px'}, 200)
+                            .focus();
                 }
                 else if (($('#email').val().length < 5 || $('#email').val().length > 30) || !( validEml.test($('#email').val()) )) {
                     $('#email')
                             .animate({'margin-left': '-10px'}, 150)
                             .animate({'margin-left': '10px'}, 150)
-                            .animate({'margin-left': '0px'}, 200);
+                            .animate({'margin-left': '0px'}, 200)
+                            .focus();
 
                 }
                 else if (!( /^[0-9]/.test(+$('#phone').val()))) {
                     $('#phone')
                             .animate({'margin-left': '-10px'}, 150)
                             .animate({'margin-left': '10px'}, 150)
-                            .animate({'margin-left': '0px'}, 200);
+                            .animate({'margin-left': '0px'}, 200)
+                            .focus();
                 }
                 else if ($('#message').val().length < 2 || $('#message').val().length > 400) {
                     $('#message')
                             .animate({'margin-left': '-10px'}, 150)
                             .animate({'margin-left': '10px'}, 150)
-                            .animate({'margin-left': '0px'}, 200);
+                            .animate({'margin-left': '0px'}, 200)
+                            .focus();
                 } else {
                     var person = {
                         '1.Name': $('#name').val(),
