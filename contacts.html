@@ -30,7 +30,7 @@
 
             <textarea maxlength="500" placeholder="Сообщение" id="message"></textarea>
 
-            <input type="text" readonly class="select" placeholder="Сумма" />
+            <input type="text" readonly class="select single" placeholder="Сумма" />
 
             <div class="blockPrice">
                 <div class="price slide">
@@ -375,9 +375,21 @@
             }
         });
 
-        $('.serv').offset({'left':$('.select.multi').offset().left});
+        $('.price').offset({'left':$('.select.single').offset().left,'top':$('.select.single').offset().top + $('.select.single').height() - 3});
+        $('.price').css('width',$('.select.single').width()+15);
+        $('.serv').offset({'left':$('.select.multi').offset().left,'top':$('.select.multi').offset().top + $('.select.multi').height() - 3});
+        $('.serv').css('width',$('.select.multi').width()+15);
+
         $(window).resize(function(){
-            $('.serv').offset({'left':$('.select.multi').offset().left});
+           var int = setTimeout(function(){
+                $('.price').css({'left':$('.select.single').offset().left,'top':$('.select.single').offset().top + $('.select.single').height() - 63});
+                $('.price').css('width',$('.select.single').width()+15);
+                $('.serv').css({'left':$('.select.multi').offset().left,'top':$('.select.multi').offset().top + $('.select.multi').height() - 63});
+                $('.serv').css('width',$('.select.multi').width()+15);
+            },1);
+            setTimeout(function(){
+                clearInterval(int);
+            },1500);
         });
 
         $('.blackBtn').click(function(){
