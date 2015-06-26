@@ -63,11 +63,20 @@
      </div>
 
      <div class="publicLinks">
-        <div  class="links centered">
+        <div class="links centered">
            <a id="firstLink" class="publicLinkImg"><img src="img/public1.png"  alt="public link" /></a>
            <a id="secondLink" class="publicLinkImg"><img src="img/public2.png"  alt="public link" /></a>
            <a id="thirdLink" class="publicLinkImg"><img src="img/public3.png"  alt="public link" /></a>
            <a id="lastLink" class="publicLinkImg"><img src="img/public4.png"  alt="public link" /></a>
+        </div>
+     </div>
+
+     <div id="mobilePublic" class="publicLinks">
+        <div id="mobileCentered" class="links centered">
+           <a id="mobileSocialFirst" class="publicLinkImg"><img src="img/public1.png"  alt="public link" /></a>
+           <a id="mobileSocialSecond" class="publicLinkImg"><img src="img/public2.png"  alt="public link" /></a><br/><br/>
+           <a id="mobileSocialThird" class="publicLinkImg"><img src="img/public3.png"  alt="public link" /></a>
+           <a id="mobileSocialLast" class="publicLinkImg"><img src="img/public4.png"  alt="public link" /></a>
         </div>
      </div>
 
@@ -85,6 +94,11 @@
 
     .centered.contacts{
         padding-top: 100px;
+    }
+
+
+    #mobilePublic{
+        display: none;
     }
 
     .priceVal,.servVal{
@@ -284,15 +298,43 @@
     }
 
     @media screen and (max-width: 440px){
-        #thirdLink{
-            float: left;
-            clear: both;
-            padding-left: 0;
+        .publicLinks{
+            display: none;
         }
 
-        #lastLink{
-            float: left;
-            margin-left: 50px;
+        #mobilePublic{
+            display: block;
+            height: 200px;
+        }
+
+        #mobileCentered{
+            text-align: center;
+            width:86.66%;
+            padding-top: 40px;
+        }
+
+        #mobileSocialFirst{
+            float: none;
+            padding:0;
+        }
+
+        #mobileSocialSecond{
+            float: none;
+            padding:0;
+            margin-left: 70px
+        }
+
+        #mobileSocialThird{
+            float: none;
+            padding:0;
+            margin-top:30px;
+        }
+
+        #mobileSocialLast{
+            float: none;
+            padding:0;
+            margin-top:30px;
+            margin-left: 70px
         }
     }
 
@@ -386,7 +428,7 @@
                 $('.price').css('width',$('.select.single').width()+15);
                 $('.serv').css({'left':$('.select.multi').offset().left,'top':$('.select.multi').offset().top + $('.select.multi').height() - 63});
                 $('.serv').css('width',$('.select.multi').width()+15);
-            },1);
+            },50);
             setTimeout(function(){
                 clearInterval(int);
             },1500);
@@ -429,7 +471,6 @@
                         '4.Message': $('#message').val(),
                         '5.Price': $('.select:first').val(),
                         '6.Service': service
-
                     };
                 }
             }else if($(window).width() <= 960){
@@ -471,7 +512,48 @@
                         '4.Message': $('#message').val(),
                         '5.Price': $('.select:first').val(),
                         '6.Service': service
+                    };
+                }
+            }else{
+                if ($('#name').val().length < 2 || $('#name').val().length > 40) {
+                    var marginStart = parseFloat($('#name').css('margin-top'));
+                    var delta = marginStart - 10;
 
+                    $('#name').focus().css({'color':'#e53935'});
+
+                    setTimeout(function(){
+                        $('#name').focus().css({'color':'#212121','transition':'0.6s'});
+                    },1000);
+                }
+                else if (($('#email').val().length < 5 || $('#email').val().length > 30) || !( validEml.test($('#email').val()) )) {
+                    $('#email').focus().css({'color':'#e53935'});
+
+                    setTimeout(function(){
+                        $('#email').focus().css({'color':'#212121','transition':'0.6s'});
+                    },1000);
+
+                }
+                else if (!( /^[0-9]/.test(+$('#phone').val()))) {
+                    $('#phone').focus().css({'color':'#e53935'});
+
+                    setTimeout(function(){
+                        $('#phone').focus().css({'color':'#212121','transition':'0.6s'});
+                    },1000);
+                }
+                else if ($('#message').val().length < 2 || $('#message').val().length > 400) {
+                    $('#message').focus().css({'color':'#e53935'});
+
+                    setTimeout(function(){
+                        $('#message').focus().css({'color':'#212121','transition':'0.6s'});
+                    },1000);
+                } else {
+                    var person = {
+                        '1.Name': $('#name').val(),
+                        '2.Email': $('#email').val(),
+                        '3.Phone': $('#phone').val(),
+                        '4.Message': $('#message').val(),
+                        '5.Price': $('.select:first').val(),
+                        '6.Service': service
                     };
                 }
             }
