@@ -464,13 +464,20 @@
            var int = setTimeout(function(){
 
                 $('label').each(function(){
-                    $(this).css({'left':$(this).next().offset().left + 15,'top':$(this).next().offset().top});
+                    $(this).css({'left':$(this).next().offset().left + 15,'top':$(this).next().offset().top,'display':'none'});
                 });
 
                 $('.price').css({'left':$('.select.single').offset().left,'top':$('.select.single').offset().top + $('.select.single').height() - 63});
                 $('.price').css('width',$('.select.single').width()+15);
                 $('.serv').css({'left':$('.select.multi').offset().left,'top':$('.select.multi').offset().top + $('.select.multi').height() - 63});
                 $('.serv').css('width',$('.select.multi').width()+15);
+
+               $('label').each(function(){
+                   $(this).css({'left':$(this).next().offset().left + 15,'top':$(this).next().offset().top,'display':'none'});
+               });
+
+               $('label').css('display','block');
+
             },50);
             setTimeout(function(){
                 clearInterval(int);
