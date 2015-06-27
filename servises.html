@@ -429,6 +429,11 @@
         .myBr{
             display: block;
         }
+
+        .ui-dialog.ui-widget.ui-widget-content{
+            left : 0;
+            width : 100% !important;
+        }
     }
 
     @media screen and (max-width: 768px){
@@ -441,11 +446,36 @@
             text-align: center;
         }
 
+        .item{
+            font-size: 12px;
+        }
+
+        .ui-dialog-title{
+            font-size: 20px;
+        }
+
     }
 
     @media screen and (max-width: 460px){
         .serviceImg{
             width : 190px;
+        }
+
+        .dialogItem,.showArrow{
+            display : none !important;
+        }
+
+        .item{
+            font-size: 11px;
+
+        }
+
+        .underOverlay{
+            padding-left: 5px !important;
+        }
+
+        .ui-dialog-title{
+            font-size: 18px;
         }
 
         .underTitleService{
