@@ -414,13 +414,29 @@
                 });
                 print = service = service.substring(0,service.length - 2);
 
-                if ( print.length > 60 ){
-                    print = service.substr(0,60) + '...'
+                if ( print.length > $('.select.multi').width() / 10 ){
+                    print = service.substr(0,parseInt($('.select.multi').width() / 10)) + '...';
                 }
                 $('.select.multi').val('').val(print);
             }else{
                 $('.select.multi').val('');
             }
+
+            $(window).resize(function(){
+                if ( $('.servVal.choice').length ){
+                    $('.servVal.choice').each(function(){
+                        service += $(this).text() + ', '
+                    });
+                    print = service = service.substring(0,service.length - 2);
+
+                    if ( print.length > $('.select.multi').width() / 10 ){
+                        print = service.substr(0,parseInt($('.select.multi').width() / 10)) + '...';
+                    }
+                    $('.select.multi').val('').val(print);
+                }else{
+                    $('.select.multi').val('');
+                }
+            });
         });
 
         $('.redBlock').click(function(event){

@@ -823,27 +823,15 @@ footer .logo{
 
 .servicePhoto{
     text-align: center;
-    width: 380px;
+    width: 32.4786%;
     height: 495px;
     display: inline-block;
     border: 1px solid #e0e0e0;
     position: relative;
 }
 
-.darkOverlay{
-    background-color: black;
-    position: absolute;
-    height: 0px;
-    width: 381px;
-    z-index: 1;
-}
-
 .servicePhoto.first{
     float: left;
-}
-
-.servicePhoto:last-child{
-    float: right;
 }
 
 .underImgService{
