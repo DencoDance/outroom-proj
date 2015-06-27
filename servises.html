@@ -58,7 +58,7 @@
                             </div>
                         </div>
                         <img class="eye" src="img/eyeLight.png" alt="look" />
-                    </div>
+                    </div><br class="myBr"/>
 
                     <div class="servicePhoto sec">
                          <div class="darkOverlay sec">
@@ -95,7 +95,7 @@
                             </div>
                         </div>
                         <img class="eye" src="img/eyeLight.png" alt="look" />
-                    </div>
+                    </div><br class="myBr"/>
 
                     <div id="third" class="servicePhoto third">
                         <div class="darkOverlay third">
@@ -147,6 +147,10 @@
     header{
         position: fixed;
         top: 0;
+    }
+
+    .myBr{
+        display: none;
     }
 
     .servicePhoto.third{
@@ -399,7 +403,16 @@
         opacity : 1;
     }
 
-/*    @media screen and (max-width: 1340px){
+    .servicePhoto{
+        text-align: center;
+        width: 380px;
+        height: 495px;
+        display: inline-block;
+        border: 1px solid #e0e0e0;
+        position: relative;
+    }
+
+    @media screen and (max-width: 1340px){
         .blockService{
             height: auto;
         }
@@ -407,14 +420,29 @@
         .servicePhoto{
             float : none;
             margin-bottom: 40px;
-            display: block;
         }
 
         #first,#third{
             float : none;
         }
+
+        .myBr{
+            display: block;
+        }
     }
-*/
+
+    @media screen and (max-width: 768px){
+        .serviceContent{
+            padding-top: 120px;
+        }
+
+        .headText.light,.headText.light + hr{
+            float:none;
+            text-align: center;
+        }
+
+    }
+
 </style>
 
 <script>

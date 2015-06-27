@@ -821,15 +821,6 @@ footer .logo{
     padding-top: 100px;
 }
 
-.servicePhoto{
-    text-align: center;
-    width: 32.4786%;
-    height: 495px;
-    display: inline-block;
-    border: 1px solid #e0e0e0;
-    position: relative;
-}
-
 .servicePhoto.first{
     float: left;
 }
