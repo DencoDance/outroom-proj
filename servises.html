@@ -456,6 +456,7 @@
         .ui-dialog.ui-widget.ui-widget-content{
             left : 0;
             width : 100% !important;
+            position: absolute;
         }
 
         #dialog .underOverlayText{
@@ -717,5 +718,8 @@
          });
      });
 
+      $(window).resize(function(){
+          $('#dialog').dialog('close');
+      });
   });
 </script>
