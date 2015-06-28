@@ -331,7 +331,7 @@
 
     .sendForm{
         margin: 0 auto;
-        width: 415px;
+        width: 75%;
         text-align: left;
         padding-top: 40px;
     }
@@ -434,6 +434,15 @@
             left : 0;
             width : 100% !important;
         }
+
+        .blackContainer{
+            padding-bottom: 70px;
+        }
+
+        .blackBtn,.blackBtnSend{
+            width : 150px;
+            height: 50px;
+        }
     }
 
     @media screen and (max-width: 768px){
@@ -444,6 +453,10 @@
         .headText.light,.headText.light + hr{
             float:none;
             text-align: center;
+        }
+
+        .blackContainer{
+            padding-bottom: 100px;
         }
 
         .item{
@@ -460,10 +473,6 @@
             overflow-x: hidden;
         }
 
-        .blackContainer{
-            padding-bottom: 115px;
-        }
-
     }
 
     @media screen and (max-width: 460px){
@@ -471,17 +480,12 @@
             width : 190px;
         }
 
-        .dialogItem,.showArrow{
+        .dialogItem,.showArrow,.titlePart,.angleLine{
             display : none !important;
         }
 
         .item{
             font-size: 12px;
-        }
-
-        .blackBtn{
-            width : 150px;
-            height: 50px;
         }
 
         .underOverlay{
