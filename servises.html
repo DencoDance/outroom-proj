@@ -242,7 +242,8 @@
     #dialog .underOverlay{
         background: #fefefe;
         width: 97.5%;
-        height: 35px;
+        min-height: 35px;
+        height : auto;
         font-family: robotoMedium;
         font-size: 14px;
         line-height: 35px;
@@ -456,7 +457,7 @@
         }
 
         .blackContainer{
-            padding-bottom: 100px;
+            top : 205px;
         }
 
         .item{
@@ -468,9 +469,13 @@
         }
 
         #dialog .underOverlayText{
-            max-height: 200px;
+            max-height: 150px;
             overflow-y: auto;
             overflow-x: hidden;
+        }
+
+        .underOverlay{
+            padding-left: 3px !important;
         }
 
     }
@@ -486,10 +491,6 @@
 
         .item{
             font-size: 12px;
-        }
-
-        .underOverlay{
-            padding-left: 3px !important;
         }
 
         .ui-dialog-title{
