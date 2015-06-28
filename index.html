@@ -229,6 +229,51 @@
    </body>
 </html>
 
+<style>
+
+    #menuBlackFirst,#menuBlackSecond,#menuBlackThird{
+        display: none;
+    }
+
+    @media screen and (max-width: 1350px) {
+        .introText{
+            padding-top : 110px;
+        }
+    }
+
+    @media screen and (max-width: 1010px) {
+        .headerLinks{
+            display: none;
+        }
+
+        .introText{
+            padding-top : 60px;
+        }
+
+        .roboBold{
+            font-size: 40px;
+        }
+
+        .roboBoldBig{
+            font-size: 50px;
+        }
+    }
+
+    @media screen and (max-width: 710px) {
+        .roboBold{
+            font-size: 24px;
+        }
+
+        .roboBoldBig{
+            font-size: 24px;
+        }
+
+        .introTextLast{
+            font-size: 12px;
+        }
+    }
+</style>
+
 <script>
 
     $(function(){
@@ -261,7 +306,7 @@
 
     $(function(){
         $(window).on('scroll mousewheel', function (event) {
-            if( !(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) ) {
+            if( (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) ) {
 
                if ($('.intro.black').css('opacity') > 0.03) {
                    $('.intro.black').css('display', 'block');
@@ -294,6 +339,7 @@
                     $(window).scrollTop(1);
 
                     $('.mainHeader').css({'position': 'initial'});
+                    $('#menuBlackFirst,#menuBlackSecond,#menuBlackThird').css('display','none');
 
                     $('.intro').height($('.intro').height() + 40);
 
@@ -312,6 +358,7 @@
                } else {
                    if ($('.intro').height() <= 0) {
                        $('.mainHeader').css({'position': 'fixed', 'top': '0'});
+                       $('#menuBlackFirst,#menuBlackSecond,#menuBlackThird').css('display','block');
                        if ($(window).scrollTop() > scrollPosition && $(window).scrollTop() > margin) {
                            $('.mainHeader').slideUp(180);
                        } else if ($(window).scrollTop() < scrollPosition) {
@@ -323,6 +370,7 @@
             }else{
                if ( $(window).scrollTop() >= mainHeaderPositionTop ){
                    $('.mainHeader').css({'position': 'fixed', 'top': '0'});
+                   $('#menuBlackFirst,#menuBlackSecond,#menuBlackThird').css('display','block');
 
                    if ( $(window).scrollTop() > scrollPosition && $(window).scrollTop() > margin + $('.intro').height() ) {
                        $('.mainHeader').slideUp(180);
@@ -332,6 +380,7 @@
                    scrollPosition = $(window).scrollTop();
                }else{
                    $('.mainHeader').css({'position': 'initial'});
+                   $('#menuBlackFirst,#menuBlackSecond,#menuBlackThird').css('display','none');
                }
            }
         });
