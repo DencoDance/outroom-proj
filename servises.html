@@ -430,21 +430,6 @@
         .myBr{
             display: block;
         }
-
-        .ui-dialog.ui-widget.ui-widget-content{
-            left : 0;
-            width : 100% !important;
-            position: absolute;
-        }
-
-        .blackContainer{
-            padding-bottom: 70px;
-        }
-
-        .blackBtn,.blackBtnSend{
-            width : 150px;
-            height: 50px;
-        }
     }
 
     @media screen and (max-width: 768px){
@@ -457,12 +442,20 @@
             text-align: center;
         }
 
-        .blackContainer{
-            top : 300px;
-        }
-
         .ui-dialog-title{
             font-size: 20px;
+        }
+
+        .underOverlay{
+            padding-left: 3px !important;
+        }
+
+    }
+
+    @media screen and (max-width: 607px){
+        .ui-dialog.ui-widget.ui-widget-content{
+            left : 0;
+            width : 100% !important;
         }
 
         #dialog .underOverlayText{
@@ -471,10 +464,14 @@
             overflow-x: hidden;
         }
 
-        .underOverlay{
-            padding-left: 3px !important;
+        .blackContainer{
+            padding-bottom: 100px;
         }
 
+        .blackBtn,.blackBtnSend{
+            width : 150px;
+            height: 50px;
+        }
     }
 
     @media screen and (max-width: 460px){
