@@ -367,11 +367,13 @@ body{
 .leftBlock{
     float: left;
     text-align: left;
+    width : 49.3%;
 }
 .rightBlock{
     float: right;
     text-align: left;
     padding-bottom: 120px;
+    width : 49.3%;
 }
 
 /* */
@@ -1169,6 +1171,22 @@ footer .logo{
     .headerLinks.dark{
         display:none;
     }
+
+    .leftBlock{
+        float: none;
+        text-align: center;
+        width : 100%;
+        padding-bottom: 30px;
+    }
+    .rightBlock{
+        float: none;
+        text-align: center;
+        width : 100%;
+    }
+
+    .fourImg{
+        margin-top: -90px;
+    }
 }
 
 @media screen and (max-width: 880px) {
@@ -1202,9 +1220,29 @@ footer .logo{
         padding-top: 160px;
     }
 
+    .fourImg img {
+        height: 300px;
+    }
+
+    .centered._works{
+        padding-top: 20px;
+    }
+
+    .ourWorks{
+        height: 130px;
+    }
+
    .centered.works{
         text-align: center;
    }
+
+   .centered.block1_Content{
+       padding-top: 20px;
+   }
+
+    .leftBlock,.rightBlock{
+        text-align: left;
+    }
 
    .headText + hr{
        float: left;
@@ -1277,6 +1315,12 @@ footer .logo{
     }
 }
 
+@media screen and (max-width: 670px) {
+    .fourImg img {
+        height: 200px;
+    }
+}
+
 @media screen and (max-width: 620px) {
     .workExample{
         height: 380px;
@@ -1290,8 +1334,16 @@ footer .logo{
         text-align: left;
     }
 
+    .ourWorks{
+        height: 160px;
+    }
+
     .oneLineImg{
         width: 280px;
+    }
+
+    .fourImg img {
+        height: 130px;
     }
 
     .centered.works{
@@ -1389,5 +1441,11 @@ footer .logo{
 @media screen and (max-width: 400px) {
     .tabs.work{
         padding-top: 200px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .centered._works{
+        margin-top: 20px;
     }
 }
