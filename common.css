@@ -1192,6 +1192,10 @@ footer .logo{
         display: inherit;
     }
 
+    .intro{
+        background: url(img/fon.png) no-repeat 50%;
+    }
+
     .header{
         padding-top: 30px;
     }
@@ -1245,7 +1249,7 @@ footer .logo{
    }
 
     .tabs.work{
-        padding-top: 160px;
+        padding-top: 155px;
     }
 
     .fourImg img {
@@ -1253,7 +1257,7 @@ footer .logo{
     }
 
     .centered._works{
-        padding-top: 20px;
+        padding-top: 33px;
     }
 
     .ourWorks{
@@ -1362,8 +1366,8 @@ footer .logo{
         text-align: left;
     }
 
-    .ourWorks{
-        height: 160px;
+    .ourWorks {
+        height: 150px;
     }
 
     .oneLineImg{
@@ -1469,6 +1473,10 @@ footer .logo{
 @media screen and (max-width: 400px) {
     .tabs.work{
         padding-top: 200px;
+    }
+
+    .ourWorks {
+        height: 180px;
     }
 }
 
