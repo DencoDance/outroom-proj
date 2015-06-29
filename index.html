@@ -180,31 +180,6 @@
            <span class="headText">ПОСЛЕДНЕЕ ИЗ БЛОГА</span>
            <hr />
 
-
-           <div class="blogItem first change">
-               <span class="smallItalic blog">20 апреля, 2015</span><br/>
-               <div class="titleBox">
-                   <span class="bigCont blog">РЕАЛИЗУЕМ ЕЩЁ БОЛЕЕ БЕЗОПАСНЫЙ VPN-ПРОТОКОЛ</span>
-               </div>
-               <span class="smallItalic blog">- Новости</span>
-           </div>
-
-           <div class="blogItem next">
-               <span class="smallItalic blog">20 апреля, 2015</span><br/>
-               <div class="titleBox">
-                   <span class="bigCont blog">РЕАЛИЗУЕМ ЕЩЁ БОЛЕЕ БЕЗОПАСНЫЙ VPN-ПРОТОКОЛ</span>
-               </div>
-               <span class="smallItalic blog">- Новости</span>
-           </div>
-
-           <div class="blogItem next">
-               <span class="smallItalic blog">20 апреля, 2015</span><br/>
-               <div class="titleBox">
-                   <span class="bigCont blog">РЕАЛИЗУЕМ ЕЩЁ БОЛЕЕ БЕЗОПАСНЫЙ VPN-ПРОТОКОЛ</span>
-               </div>
-               <span class="smallItalic blog">- Новости</span>
-           </div>
-
            <div class="blockPhoto">
                <div class="overlay">
                    <div class="bigOverlayContent">
@@ -245,6 +220,32 @@
 
                </div>
            </div>
+
+
+            <div class="blogItem first change">
+                <span class="smallItalic blog">20 апреля, 2015</span><br/>
+                <div class="titleBox">
+                    <span class="bigCont blog">РЕАЛИЗУЕМ ЕЩЁ БОЛЕЕ БЕЗОПАСНЫЙ VPN-ПРОТОКОЛ</span>
+                </div>
+                <span class="smallItalic blog">- Новости</span>
+            </div>
+
+            <div class="blogItem next">
+                <span class="smallItalic blog">20 апреля, 2015</span><br/>
+                <div class="titleBox">
+                    <span class="bigCont blog">РЕАЛИЗУЕМ ЕЩЁ БОЛЕЕ БЕЗОПАСНЫЙ VPN-ПРОТОКОЛ</span>
+                </div>
+                <span class="smallItalic blog">- Новости</span>
+            </div>
+
+            <div class="blogItem next last">
+                <span class="smallItalic blog">20 апреля, 2015</span><br/>
+                <div class="titleBox">
+                    <span class="bigCont blog">РЕАЛИЗУЕМ ЕЩЁ БОЛЕЕ БЕЗОПАСНЫЙ VPN-ПРОТОКОЛ</span>
+                </div>
+                <span class="smallItalic blog">- Новости</span>
+            </div>
+
        </div>
    </div>
 
@@ -333,18 +334,22 @@
             width: 86.66%;
         }
 
-        .block4{
-            height: 1430px;
-        }
-
         .smallCont,.bigCont,.smallItalic{
             padding-left: 45px;
+        }
+
+        .block4{
+            height: 1470px;
         }
     }
 
     @media screen and (max-width: 980px) {
         .hideBr{
             display: block;
+        }
+
+        .block4{
+            height: 1413px;
         }
 
         .servisesBlock{
@@ -381,6 +386,10 @@
         .smallImgLeft,.smallImgRight,.overlayRight,.overlayLeft{
             height : 270px;
         }
+
+        .block4{
+            height: 1313px;
+        }
     }
 
     @media screen and (max-width: 768px) {
@@ -390,6 +399,10 @@
 
         .block2{
             height: 1110px !important;
+        }
+
+        .block4{
+            height: 1100px;
         }
 
         .bigPhoto,.overlay{
@@ -420,6 +433,14 @@
 
         .blogItem{
             display: block;
+        }
+
+        .block4{
+            height : auto;
+        }
+
+        .blogItem.next.last{
+            margin-bottom: 60px;
         }
     }
 
