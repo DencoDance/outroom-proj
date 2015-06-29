@@ -624,7 +624,7 @@ body{
 .overlay{
     position: absolute;
     height: 397px;
-    width: 1170px;
+    width: 86.66%;
     z-index: 1;
     cursor: pointer;
 }
@@ -643,7 +643,7 @@ body{
     z-index: 1;
     position: absolute;
     height: 300px;
-    width: 570px;
+    width: 42%;
     cursor: pointer;
 }
 
@@ -662,7 +662,7 @@ body{
     position: absolute;
     float: right;
     height: 300px;
-    width: 570px;
+    width: 42%;
     cursor: pointer;
 }
 
