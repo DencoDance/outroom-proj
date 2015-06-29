@@ -112,7 +112,7 @@
 
    <div class="block3">
        <div class="centered key">
-           <span class="headText">КЛЮЧЕВЫЕ ОСОБЕННОСТИ</span>
+           <span class="headText change">КЛЮЧЕВЫЕ ОСОБЕННОСТИ</span>
            <hr />
 
            <div class="allPhoto">
@@ -132,8 +132,8 @@
                            </div>
                        </div>
                    </div>
-               </div>
-               <div class="block3_Img">
+               </div><br class="hideBr" />
+               <div class="block3_Img second">
                    <div class="imgBlock_3">
                        <img src="img/rocket.png" alt="speed" />
                        <div class="underImg middle">
@@ -147,8 +147,8 @@
                            </div>
                        </div>
                    </div>
-               </div>
-               <div class="block3_Img">
+               </div><br class="hideBr" />
+               <div class="block3_Img third">
                    <div class="imgBlock_3">
                        <img src="img/result.png" alt="result" />
                        <div class="underImg">
@@ -235,6 +235,10 @@
         display: none;
     }
 
+    .hideBr{
+        display: none;
+    }
+
     @media screen and (max-width: 1350px) {
         .introText{
             padding-top : 110px;
@@ -267,6 +271,31 @@
         }
     }
 
+    @media screen and (max-width: 980px) {
+        .hideBr{
+            display: block;
+        }
+
+        .block3_Img{
+            float: none !important;
+            display: block !important;
+        }
+
+        .allPhoto{
+            height: auto !important;
+        }
+
+        .block3_Img.second,.block3_Img.third{
+            margin-top: 210px;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .centered.key {
+            padding-top: 20px;
+        }
+    }
+
     @media screen and (max-width: 710px) {
         .roboBold{
             font-size: 24px;
@@ -280,6 +309,7 @@
             font-size: 12px;
         }
     }
+
 </style>
 
 <script>
@@ -392,6 +422,21 @@
                }
            }
         });
+
+        if ($(window).width() <= 380){
+            $('.headText.change').text('КЛЮЧЕВЫЕ ПРИНЦИПЫ');
+        }else{
+            $('.headText.change').text('КЛЮЧЕВЫЕ ОСОБЕННОСТИ');
+        }
+
+        $(window).resize(function(){
+            if ($(window).width() <= 380){
+                $('.headText.change').text('КЛЮЧЕВЫЕ ПРИНЦИПЫ');
+            }else{
+                $('.headText.change').text('КЛЮЧЕВЫЕ ОСОБЕННОСТИ');
+            }
+        });
+
     });
 
 </script>
