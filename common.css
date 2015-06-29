@@ -132,7 +132,23 @@ body{
     transition: 0.5s;
 }
 
+#lineWhiteFirst{
+    position: absolute;
+    right: 6.7%;
+    top: 42px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
 #menuLightSecond{
+    position: absolute;
+    right: 6.7%;
+    top: 50px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#lineWhiteSecond{
     position: absolute;
     right: 6.7%;
     top: 50px;
@@ -144,6 +160,14 @@ body{
     position: absolute;
     right: 6.7%;
     top: 50px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#lineWhiteThird{
+    position: absolute;
+    right: 6.7%;
+    top: 58px;
     cursor: pointer;
     transition: 0.5s;
 }
@@ -512,7 +536,7 @@ body{
 }
 
 .block3_Img{
-    display: inline-block;
+    display: inline-flex;
     max-height: 210px;
 }
 
@@ -1166,6 +1190,10 @@ footer .logo{
 @media screen and (max-width: 1010px) {
     .mobileMenu{
         display: inherit;
+    }
+
+    .header{
+        padding-top: 30px;
     }
 
     .headerLinks.dark{

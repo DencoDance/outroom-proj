@@ -19,7 +19,7 @@
       <div class="centered">
          <header class="header">
              <a class="logoHref" href="index.html"><img class="logo" src="img/outroomlight.png" alt="logo" /></a>
-             <a class="language">РУС</a>
+             <a class="language main">РУС</a>
              <nav class="headerLinks">
                  <a href="index.html">ГЛАВНАЯ</a>
                  <a href="servises.html">УСЛУГИ</a>
@@ -27,6 +27,13 @@
                  <a href="blog.html">БЛОГ</a>
                  <a href="contacts.html">КОНТАКТЫ</a>
              </nav>
+
+             <div class="mobileMenu">
+                 <img id="lineWhiteFirst" src="img/lineWhiteTransp.png" alt="menu" />
+                 <img id="lineWhiteSecond" src="img/lineWhiteTransp.png" alt="menu" />
+                 <img id="lineWhiteThird" src="img/lineWhiteTransp.png" alt="menu" />
+             </div>
+
          </header>
 
           <div class="introText">
@@ -440,7 +447,7 @@
         }
 
         .blogItem.next.last{
-            margin-bottom: 60px;
+            margin-bottom: 100px;
         }
     }
 
@@ -504,7 +511,7 @@
 
     $(function(){
         $(window).on('scroll mousewheel', function (event) {
-            if( (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) ) {
+            if( !(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) ) {
 
                if ($('.intro.black').css('opacity') > 0.03) {
                    $('.intro.black').css('display', 'block');
