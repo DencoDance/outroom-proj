@@ -49,6 +49,7 @@ body{
 .scrollBlock{
     position: absolute;
     width: 86.66%;
+    max-width : 1170px;
     text-align: center;
     padding-top: 20px;
 }
@@ -649,6 +650,7 @@ body{
     position: absolute;
     height: 397px;
     width: 86.66%;
+    max-width: 1170px;
     z-index: 1;
     cursor: pointer;
 }
