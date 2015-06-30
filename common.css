@@ -670,6 +670,7 @@ body{
     position: absolute;
     height: 300px;
     width: 42%;
+    max-width : 573px;
     cursor: pointer;
 }
 
@@ -689,6 +690,7 @@ body{
     float: right;
     height: 300px;
     width: 42%;
+    max-width : 573px;
     cursor: pointer;
 }
 
