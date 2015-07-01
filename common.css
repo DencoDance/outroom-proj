@@ -886,6 +886,7 @@ footer .logo{
 .eye{
    bottom: 15px;
    margin-left: -20px;
+   left : 50%;
    position: absolute;
 }
 
