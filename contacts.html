@@ -136,8 +136,8 @@
     .centered.contacts .smallInp{
         outline: none;
         border: none;
-        width: 31.2%;
-        padding-left: 1.28%;
+        width: 31.22%;
+        padding-left: 15px;
         height: 50px;
         display: inline;
         font-family: robotoRegular;
@@ -157,8 +157,8 @@
         border: none;
         margin-top: 11px;
         float: left;
-        background:#fefefe no-repeat;
         background-image: url('img/down.png');
+        background : #fefefe url("img/down.png") no-repeat scroll 95% 25px;
         background-position-y: 24px;
         background-position-x: 96%;
     }
@@ -172,18 +172,22 @@
     }
 
     #name{
-        float: left;
+        float: none;
         background:#fefefe;
     }
 
+    .centered.contacts{
+        text-align: center;
+    }
+
     #email{
-        margin-left: 15px;
+        margin-left: 9px;
         background:#fefefe;
     }
 
     #phone{
         float: none;
-        margin-left: 10px;
+        margin-left: 9px;
     }
 
     .centered.contacts textarea{
@@ -193,10 +197,11 @@
         background: #fefefe;
         resize: none;
         border: none;
+        float : left;
         font-family: robotoRegular;
         font-size : 14px;
         color : #212121;
-        width: 98.48%;
+        width: 98.5%;
         padding-left: 15px;
         padding-top: 15px;
         height: 120px;
@@ -262,36 +267,30 @@
         display: inline;
     }
 
-    @media screen and (max-width: 1348px){
+    @media screen and (max-width: 1355px){
         #name{
-            width: 98.75%;
+            width: 98.7%;
         }
 
         #message{
-            width: 98.4%;
+            width: 98.58%;
         }
 
         #email{
             float:left;
             margin-top: 15px;
             margin-left: 0;
-            width : 48.2%;
+            width : 48.03%;
         }
 
         #phone{
             margin-top: 15px;
-            width : 48.2%;
+            width : 48.03%;
             float : right;
         }
     }
 
-    @media screen and (max-width: 1130px){
-        #phone{
-            margin-left: 5px;
-        }
-    }
-
-    @media screen and (max-width: 960px){
+    @media screen and (max-width: 1250px){
        #name,#email,#phone,.select,#message,.select.multi{
            display: block;
            width : 95%;
