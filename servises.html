@@ -157,10 +157,6 @@
         display: none;
     }
 
-    .servicePhoto.third{
-        float: none;
-    }
-
     .ui-dialog.ui-widget.ui-widget-content{
         width: 590px !important;
         height: 550px !important;
@@ -417,6 +413,10 @@
         position: relative;
     }
 
+    #third{
+        float: right;
+    }
+
     @media screen and (max-width: 1340px){
         .blockService{
             height: auto;
@@ -428,7 +428,7 @@
         }
 
         #first,#third{
-            float : none;
+            float : none !important;
         }
 
         .myBr{
@@ -518,7 +518,7 @@
 </style>
 
 <script>
-    function overlaySlider(target,overlay,time){
+        function overlaySlider(target,overlay,time){
         $(overlay).css('margin-top',$(target).height()).addClass('hidden');
         var m_top = $(overlay).next().css('margin-top');
         var flag = true;
@@ -579,11 +579,14 @@
  var validEml = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
 
   $(function(){
-
-     if ( navigator.userAgent.indexOf('Safari') ){  //fix for Safari
-         $('.servicePhoto.third').css('float','none').css('float','right');
+    // safari fix
+     if ( navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1 && $(window).width() > 1340 ){
+        $('#third').css('float','none');
+        setTimeout(function(){
+            $('#third').css('float','right');
+        },0);
      }
-
+   //end safari fix
      $('.overlayContainer,.servicePhoto').click(function(){
 
          services = '*********************************** \n';
