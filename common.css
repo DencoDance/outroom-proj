@@ -538,7 +538,7 @@ body{
 }
 
 .block3_Img{
-    display: inline-flex;
+    display: inline-table;
     max-height: 210px;
 }
 
@@ -637,6 +637,7 @@ body{
     height: 397px;
     -webkit-filter: brightness(0.6);
     -moz-filter: brightness(0.6);
+    -ms-filter: brightness(0.6);
     filter: brightness(0.6);
     transition: 0.5s;
 }
@@ -644,6 +645,7 @@ body{
 .darkFilter{
     -webkit-filter: brightness(0.2) !important;
     -moz-filter: brightness(0.2) !important;
+    -ms-filter: brightness(0.2) !important;
     filter: brightness(0.2) !important;
 }
 
