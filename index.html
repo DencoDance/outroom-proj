@@ -535,16 +535,18 @@
 
     $(function(){
 
-        $('.overlay,.overlayLeft,.overlayRight').mouseenter(function(){
-            var current = parseFloat($(this).children(':first').css('padding-top'));
-            var delta = parseFloat($(this).children(':first').css('padding-top')) - 20;
+        $('.overlay,.overlayLeft,.overlayRight').each(function(){
+            $(this).attr('dataTop',parseFloat($(this).children(':first').css('padding-top')));
+        });
 
+        $('.overlay,.overlayLeft,.overlayRight').mouseenter(function(){
+            var _this = $(this);
             $(this).next().addClass('darkFilter');
-            $(this).children(':first').css('padding-top',delta).find('.smallItalic.more').css({'opacity':'1','line-height':'0px'});
+            $(this).children(':first').css('padding-top',_this.attr('dataTop') - 20).find('.smallItalic.more').css({'opacity':'1','line-height':'0px'});
 
             $(this).mouseleave(function(){
                 $(this).next().removeClass('darkFilter');
-                $(this).children(':first').css('padding-top',current).find('.smallItalic.more').css({'opacity':'','line-height':'80px'});
+                $(this).children(':first').css('padding-top',_this.attr('dataTop') - 0).find('.smallItalic.more').css({'opacity':'0','line-height':'80px'});
             });
         });
     });
